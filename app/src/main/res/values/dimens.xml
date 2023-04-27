@@ -1,0 +1,10 @@
+<resources>
+    <!-- Fragment Filtrar Lista -->
+    <dimen name="GlobalMarginTopFiltrarFacturas">28dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Fragment Smart Solar -->
+    <dimen name="GlobalMarginSideSmartSolar">20dp</dimen>
+    <dimen name="GlobalMarginTopDetallesSmartSolar">15dp</dimen>
+</resources>

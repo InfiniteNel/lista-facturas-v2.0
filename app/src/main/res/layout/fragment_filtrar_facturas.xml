@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.listafacturas.FiltrarFacturasFragment">
+
+    <ScrollView
+        android:id="@+id/nsvScrollFiltrar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btAplicarFiltro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitleFiltrarFactura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtrar Facturas"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitleFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/tvTitleFechaText"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvTitleFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleFiltrarFactura" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btFechaDesde"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_fecha_button_background"
+                android:ems="8"
+                android:hint="@string/btFechaText"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/tvFechaDesde" />
+
+            <TextView
+                android:id="@+id/tvFechaDesde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tvFechaDesdeText"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleFecha" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btFechaHasta"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_fecha_button_background"
+                android:ems="8"
+                android:hint="@string/btFechaText"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/btFechaDesde"
+                app:layout_constraintTop_toBottomOf="@+id/tvFechaHasta" />
+
+            <TextView
+                android:id="@+id/tvFechaHasta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tvFechaHastaText"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toEndOf="@+id/btFechaDesde"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleFecha" />
+
+            <View
+                android:id="@+id/dFechaImporte"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
+                android:layout_marginEnd="12dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@id/dlMargenDerecho"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/btFechaHasta" />
+
+            <View
+                android:id="@+id/dImporteEstado"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
+                android:layout_marginEnd="12dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintStart_toStartOf="@id/dlMargenDerecho"
+                app:layout_constraintTop_toBottomOf="@+id/sbImporte" />
+
+            <TextView
+                android:id="@+id/tvTitleImporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
+                android:text="@string/tvTitleImporteText"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/dFechaImporte" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbImporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:max="0"
+                android:min="0"
+                android:progressTint="@color/green_500"
+                android:thumbTint="@color/green_500"
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/tvMinImporte" />
+
+            <TextView
+                android:id="@+id/tvTitleEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
+                android:text="@string/tvTitleEstadoText"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/dImporteEstado" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chPagado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-6dp"
+                android:text="Pagadas"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleEstado" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chAnuladas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-6dp"
+                android:text="Anuladas"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/chPagado" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chCuotaFija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-6dp"
+                android:text="Cuota Fija"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/chAnuladas" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chPedientesDePago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-6dp"
+                android:text="Pedientes de pago"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/chCuotaFija" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chPlanDePago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-6dp"
+                android:text="Plan de pago"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/chPedientesDePago" />
+
+            <TextView
+                android:id="@+id/tvMinImporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0€"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+
+            <TextView
+                android:id="@+id/tvMaxImporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0€"
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+
+            <TextView
+                android:id="@+id/tvRankImporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0€  -  0€"
+                android:textColor="@color/green_500"
+                app:layout_constraintEnd_toStartOf="@+id/tvMaxImporte"
+                app:layout_constraintHorizontal_bias="0.50"
+                app:layout_constraintStart_toEndOf="@+id/tvMinImporte"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dlMargenIzquierdo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dlMargenDerecho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btAplicarFiltro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_aplicar_button_background"
+        android:text="Aplicar filtros"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btEliminarFiltro"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btEliminarFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/transparent"
+        android:text="Eliminar filtros"
+        android:textAllCaps="false"
+        android:textColor="@color/green_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

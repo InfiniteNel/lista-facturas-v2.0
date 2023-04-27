@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.view.smartsolar.SmartSolarDetallesFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteIzquierdo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/GlobalMarginSideSmartSolar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteDerecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/GlobalMarginSideSmartSolar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCAU"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/GlobalMarginSideSmartSolar"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:editable="false"
+            android:hint="CAU (Código Autoconsumo)"
+            android:text="Null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEstadoAutoconsumidor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/selector_tooltip_azul_estado"
+        app:endIconCheckable="true"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilCAU">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietEstadoAutoconsumidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:editable="false"
+            android:hint="Estado solicitud alta autoconsumidor"
+            android:text="Null"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTipoConsumo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilEstadoAutoconsumidor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:editable="false"
+            android:hint="Tipo autoconsumo"
+            android:text="Null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCompensacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilTipoConsumo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:editable="false"
+            android:hint="Compensación de excedentes"
+            android:text="Null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilCompensacion">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:editable="false"
+            android:hint="Potencia de instalación"
+            android:text="Null" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

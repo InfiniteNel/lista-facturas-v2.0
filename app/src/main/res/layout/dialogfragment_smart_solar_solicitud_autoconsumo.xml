@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvEstadoSolicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:text="Estado solicitud autoconsumo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTiempoEstimado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:text="El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distribuidora"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEstadoSolicitud"
+        app:layout_constraintStart_toStartOf="@+id/tvEstadoSolicitud"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoSolicitud" />
+
+    <Button
+        android:id="@+id/vtAceptar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/shape_aplicar_button_background"
+        android:text="Aceptar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvTiempoEstimado"
+        app:layout_constraintStart_toStartOf="@+id/tvTiempoEstimado"
+        app:layout_constraintTop_toBottomOf="@+id/tvTiempoEstimado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

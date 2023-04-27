@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lista facturas V.0.2</string>
+    <!-- Fragment Filtrar Lista -->
+    <string name="filtrar_facturas_fragment_label">Filtrar facturas</string>
+    <string name="tvTitleFechaText">Con fecha de emisión</string>
+    <string name="tvFechaDesdeText">Desde:</string>
+    <string name="tvFechaHastaText">Hasta:</string>
+    <string name="tvTitleImporteText">Por un importe</string>
+    <string name="tvTitleEstadoText">Por estado</string>
+    <string name="btFechaText">dia/mes/año</string>
+
+    <!-- Fragment Lista Facturas -->
+    <string name="lista_facturas_fragment_label">Facturas</string>
+
+    <!-- Fragment Smart Solar -->
+    <string name="title_activity_smart_solar">SmartSolarActivity</string>
+    <string name="tab_text_1">Mi instalación</string>
+    <string name="tab_text_2">Energía</string>
+    <string name="tab_text_3">Detalles</string>
+</resources>
