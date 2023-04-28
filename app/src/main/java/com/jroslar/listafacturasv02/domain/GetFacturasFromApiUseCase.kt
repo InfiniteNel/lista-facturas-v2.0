@@ -7,8 +7,8 @@ import com.jroslar.listafacturasv02.data.model.FacturaModel
 class GetFacturasFromApiUseCase constructor(
     private val repository: FacturasRepository
     ) {
-    suspend operator fun invoke(severOn: Boolean): List<FacturaModel> {
-        val facturas = repository.getAllFacturasFromApi(severOn)
+    suspend operator fun invoke(): List<FacturaModel> {
+        val facturas = repository.getAllFacturasFromApi()
 
         return if (facturas.isNotEmpty()) {
             repository.clearFacturas()

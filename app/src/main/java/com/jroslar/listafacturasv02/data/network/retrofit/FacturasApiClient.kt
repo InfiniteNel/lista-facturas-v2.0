@@ -1,8 +1,7 @@
-package com.jroslar.listafacturasv02.data.network
+package com.jroslar.listafacturasv02.data.network.retrofit
 
 import co.infinum.retromock.meta.Mock
 import co.infinum.retromock.meta.MockResponse
-import com.jroslar.listafacturasv02.data.model.FacturasModel
 import com.jroslar.listafacturasv02.data.network.model.FacturasResponse
 import retrofit2.Response
 import retrofit2.http.GET

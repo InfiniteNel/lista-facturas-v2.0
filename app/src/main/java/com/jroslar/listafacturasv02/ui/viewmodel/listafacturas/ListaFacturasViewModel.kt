@@ -17,7 +17,6 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
     var _data: MutableLiveData<List<FacturaModel>> = MutableLiveData()
     var _state: MutableLiveData<ListaFacturasResult> = MutableLiveData()
     var _maxValueImporte: MutableLiveData<Float> = MutableLiveData()
-    var _serverOn: MutableLiveData<Boolean> = MutableLiveData(true)
 
     private object Injection: KoinComponent {
         val getFacturasUseCase by inject<GetFacturasFromApiUseCase>()
@@ -33,7 +32,7 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
             _state.postValue(ListaFacturasResult.LOADING)
             _data.postValue(emptyList())
             if (checkForInternet(context)) {
-                val data: List<FacturaModel> = getFacturasUseCase(_serverOn.value!!)
+                val data: List<FacturaModel> = getFacturasUseCase()
                 if (!data.isNullOrEmpty()) {
                     _data.postValue(data)
                     _state.postValue(ListaFacturasResult.DATA)

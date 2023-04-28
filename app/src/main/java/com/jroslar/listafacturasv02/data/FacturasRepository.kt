@@ -14,9 +14,9 @@ import kotlinx.coroutines.withContext
 class FacturasRepository constructor(private val facturasService: FacturasService, private val context: Context) {
     private val dispatcherIO: CoroutineDispatcher = Dispatchers.IO
 
-    suspend fun getAllFacturasFromApi(severOn: Boolean): List<FacturaModel> {
+    suspend fun getAllFacturasFromApi(): List<FacturaModel> {
         return withContext(dispatcherIO) {
-            val result = facturasService.getFacturas(severOn)
+            val result = facturasService.getFacturas()
 
             result.facturas.map { it.toModelFactura() }
         }

@@ -98,13 +98,6 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
             }
         })
 
-        binding.tvTitleFactura.setOnLongClickListener {
-            viewModel.loadingData()
-            viewModel._serverOn.postValue(!viewModel._serverOn.value!!)
-            Toast.makeText(requireContext(), if (viewModel._serverOn.value == true) "Retrofit" else "Retromock", Toast.LENGTH_SHORT).show()
-            true
-        }
-
         setFragmentResultListener(DATA_FILTER) { reqKey, bundle ->
             if (reqKey == DATA_FILTER) {
                 val value: FacturasModel = bundle.getParcelable(DATA_FILTER)!!

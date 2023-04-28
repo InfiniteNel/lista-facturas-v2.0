@@ -5,6 +5,11 @@ import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.network.FacturasService
 import com.jroslar.listafacturasv02.domain.GetFacturasFromApiUseCase
 import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
+import io.ktor.client.*
+import io.ktor.client.engine.android.*
+import io.ktor.client.features.json.*
+import io.ktor.client.features.json.serializer.*
+import io.ktor.client.features.logging.*
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -23,6 +28,16 @@ val dataModule = module {
         Retromock.Builder()
             .retrofit(get())
             .build()
+    }
+    single {
+        HttpClient(Android) {
+            install(Logging) {
+                level = LogLevel.ALL
+            }
+            install(JsonFeature) {
+                serializer = KotlinxSerializer()
+            }
+        }
     }
 
     factoryOf(::FacturasService)
