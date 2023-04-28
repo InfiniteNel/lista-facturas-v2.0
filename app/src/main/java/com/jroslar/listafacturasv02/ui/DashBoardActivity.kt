@@ -2,8 +2,11 @@ package com.jroslar.listafacturasv02.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.data.adapter.AdapterPracticas
 import com.jroslar.listafacturasv02.databinding.ActivityDashboardBinding
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasActivity
@@ -24,6 +27,21 @@ class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         intiAdapter()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_dashboard, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.cambiarLlegadaDatos -> {
+
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun intiAdapter() {

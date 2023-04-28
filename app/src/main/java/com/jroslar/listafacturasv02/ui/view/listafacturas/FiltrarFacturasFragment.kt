@@ -18,7 +18,8 @@ import com.jroslar.listafacturasv02.databinding.FragmentFiltrarFacturasBinding
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment.Companion.DATA_FILTER
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment.Companion.MAX_IMPORTE
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.FiltrarFacturasViewModel
-import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.FiltrarFacturasViewModelFactory
+import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.math.floor
@@ -28,7 +29,8 @@ class FiltrarFacturasFragment : Fragment() {
 
     private var _binding: FragmentFiltrarFacturasBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: FiltrarFacturasViewModel by viewModels { FiltrarFacturasViewModelFactory(requireContext()) }
+    private var _viewModel: FiltrarFacturasViewModel? = null
+    private val viewModel get() = _viewModel!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +64,7 @@ class FiltrarFacturasFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _viewModel = getViewModel<FiltrarFacturasViewModel>()
 
         viewModel.getList()
 

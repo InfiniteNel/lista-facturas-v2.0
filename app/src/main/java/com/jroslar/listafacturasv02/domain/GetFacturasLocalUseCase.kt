@@ -4,9 +4,11 @@ import android.content.Context
 import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 
-class GetFacturasLocalUseCase {
-    suspend operator fun invoke(context: Context, repository: FacturasRepository): List<FacturaModel> {
-        val facturas = repository.getAllFacturasLocal(context)
+class GetFacturasLocalUseCase constructor(
+    private val repository: FacturasRepository
+) {
+    suspend operator fun invoke(): List<FacturaModel> {
+        val facturas = repository.getAllFacturasLocal()
 
         return if (facturas.isNotEmpty()) facturas
             else emptyList()

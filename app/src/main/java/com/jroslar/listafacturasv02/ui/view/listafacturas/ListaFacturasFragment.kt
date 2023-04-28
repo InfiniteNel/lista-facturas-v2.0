@@ -16,14 +16,15 @@ import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.data.model.FacturasModel
 import com.jroslar.listafacturasv02.databinding.FragmentListaFacturasBinding
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
-import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
 
     private var _binding: FragmentListaFacturasBinding? = null
     private val binding get() = _binding!!
     private val adapter = ListaFacturasAdapter(this)
-    private val viewModel: ListaFacturasViewModel by viewModels { ListaFacturasViewModelFactory(requireContext()) }
+    private var _viewModel: ListaFacturasViewModel? = null
+    private val viewModel get() = _viewModel!!
 
     companion object {
         val MAX_IMPORTE: String = "maximo_importe"
@@ -68,6 +69,8 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        _viewModel = getViewModel()
 
         intiAdapter()
 

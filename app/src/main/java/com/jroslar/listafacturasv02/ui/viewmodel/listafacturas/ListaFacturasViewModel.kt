@@ -6,21 +6,23 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.domain.GetFacturasFromApiUseCase
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class ListaFacturasViewModel(val context: Context): ViewModel() {
+class ListaFacturasViewModel constructor(private val context: Context): ViewModel() {
     var _data: MutableLiveData<List<FacturaModel>> = MutableLiveData()
     var _state: MutableLiveData<ListaFacturasResult> = MutableLiveData()
     var _maxValueImporte: MutableLiveData<Float> = MutableLiveData()
     var _serverOn: MutableLiveData<Boolean> = MutableLiveData(true)
 
-    private val getFacturasUseCase = GetFacturasFromApiUseCase()
-    private val repository = FacturasRepository()
+    private object Injection: KoinComponent {
+        val getFacturasUseCase by inject<GetFacturasFromApiUseCase>()
+    }
+    private val getFacturasUseCase = Injection.getFacturasUseCase
 
     init {
         loadingData()
@@ -31,7 +33,7 @@ class ListaFacturasViewModel(val context: Context): ViewModel() {
             _state.postValue(ListaFacturasResult.LOADING)
             _data.postValue(emptyList())
             if (checkForInternet(context)) {
-                val data: List<FacturaModel> = getFacturasUseCase(context, repository, _serverOn.value!!)
+                val data: List<FacturaModel> = getFacturasUseCase(_serverOn.value!!)
                 if (!data.isNullOrEmpty()) {
                     _data.postValue(data)
                     _state.postValue(ListaFacturasResult.DATA)
@@ -79,10 +81,5 @@ class ListaFacturasViewModel(val context: Context): ViewModel() {
         API_NO_DATA,
         NO_DATA,
         DATA
-    }
-}
-class ListaFacturasViewModelFactory(private val context: Context): ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return ListaFacturasViewModel(context) as T
     }
 }

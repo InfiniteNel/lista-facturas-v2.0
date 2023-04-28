@@ -5,8 +5,8 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class FacturasModel(
-    @SerializedName("numFacturas") val numFacturas: Int,
-    @SerializedName("facturas") val facturas: List<FacturaModel>
+    val numFacturas: Int,
+    val facturas: List<FacturaModel>
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

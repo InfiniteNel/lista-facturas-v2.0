@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.jroslar.listafacturasv02.data.database.dao.FacturasDao
+import com.jroslar.listafacturasv02.data.database.model.FacturaEntity
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 
-@Database(entities = [FacturaModel::class], version = 2, exportSchema = false)
+@Database(entities = [FacturaEntity::class], version = 1, exportSchema = false)
 abstract class FacturasDatabase: RoomDatabase() {
     abstract fun facturaDao(): FacturasDao
 
