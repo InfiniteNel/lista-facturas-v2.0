@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:popupTheme="@style/Theme.ListaFacturasV02.PopupOverlay" >
+            app:popupTheme="@style/Theme.ListaFacturasV02.PopupOverlay">
 
         </androidx.appcompat.widget.Toolbar>
 

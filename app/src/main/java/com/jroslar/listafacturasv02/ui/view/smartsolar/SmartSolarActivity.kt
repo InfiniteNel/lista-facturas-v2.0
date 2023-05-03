@@ -25,6 +25,9 @@ class SmartSolarActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val upArrow = resources.getDrawable(R.drawable.baseline_arrow_back_ios_24, theme)
+        supportActionBar?.setHomeAsUpIndicator(upArrow)
 
         val smartSolarSectionsPagerAdapter = SmartSolarSectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = binding.viewPager

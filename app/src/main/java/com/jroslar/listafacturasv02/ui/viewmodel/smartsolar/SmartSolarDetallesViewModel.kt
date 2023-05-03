@@ -1,18 +1,25 @@
 package com.jroslar.listafacturasv02.ui.viewmodel.smartsolar
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.jroslar.listafacturasv02.data.model.DetallesModel
+import com.jroslar.listafacturasv02.data.model.FacturaModel
+import com.jroslar.listafacturasv02.domain.GetDetallesFromApiUseCase
+import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
+import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 class SmartSolarDetallesViewModel : ViewModel() {
+    var _state: MutableLiveData<DetallesModel> = MutableLiveData()
 
-    private val _index = MutableLiveData<Int>()
-    val text: LiveData<String> = Transformations.map(_index) {
-        "Hello world from section: $it"
+    private object Injection: KoinComponent {
+        val getDetallesFromApiUseCase by inject<GetDetallesFromApiUseCase>()
     }
+    private val getDetallesFromApiUseCase = Injection.getDetallesFromApiUseCase
 
-    fun setIndex(index: Int) {
-        _index.value = index
+    init {
+        viewModelScope.launch {
+            _state.value = getDetallesFromApiUseCase()!!
+        }
     }
 }

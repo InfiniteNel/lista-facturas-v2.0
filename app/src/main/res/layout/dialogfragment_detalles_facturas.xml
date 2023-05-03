@@ -30,13 +30,12 @@
 
     <Button
         android:id="@+id/vtCerrarPopUp"
+        style="@style/botones_primarios"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/shape_aplicar_button_background"
         android:text="Cerrar"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvInformacion"
         app:layout_constraintStart_toStartOf="@+id/tvInformacion"

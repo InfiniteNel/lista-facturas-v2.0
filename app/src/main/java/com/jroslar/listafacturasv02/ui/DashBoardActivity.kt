@@ -36,7 +36,15 @@ class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.cambiarLlegadaDatos -> {
+            R.id.changeKtor -> {
+
+                true
+            }
+            R.id.changeRetrofit -> {
+
+                true
+            }
+            R.id.changeRetromock -> {
 
                 true
             }

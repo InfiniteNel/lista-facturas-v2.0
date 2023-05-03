@@ -24,6 +24,11 @@
         <item name="elevation">0dp</item>
     </style>
 
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/green_500</item>
+    </style>
+
     <style name="Theme.ListaFacturasV02.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Theme.ListaFacturasV02.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

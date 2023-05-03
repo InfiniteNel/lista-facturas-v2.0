@@ -1,6 +1,5 @@
 package com.jroslar.listafacturasv02.domain
 
-import android.content.Context
 import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 

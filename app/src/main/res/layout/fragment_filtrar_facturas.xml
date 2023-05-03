@@ -245,30 +245,26 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btAplicarFiltro"
-        android:layout_width="match_parent"
+        style="@style/botones_primarios"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/shape_aplicar_button_background"
         android:text="Aplicar filtros"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btEliminarFiltro"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btEliminarFiltro"
-        android:layout_width="wrap_content"
+        style="@style/botones_secundarios"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:background="@android:color/transparent"
+        android:layout_marginBottom="70dp"
         android:text="Eliminar filtros"
-        android:textAllCaps="false"
-        android:textColor="@color/green_500"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/btAplicarFiltro"
+        app:layout_constraintStart_toStartOf="@+id/btAplicarFiltro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

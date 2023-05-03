@@ -31,12 +31,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:editable="false"
-            android:hint="CAU (Código Autoconsumo)"
-            android:text="Null" />
+            android:id="@+id/tietCAU"
+            style="@style/DetallesSmartSolar_TextInputEditText"
+            android:hint="CAU (Código Autoconsumo)"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,21 +41,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
-        app:endIconMode="custom"
-        app:endIconDrawable="@drawable/selector_tooltip_azul_estado"
         app:endIconCheckable="true"
+        app:endIconDrawable="@drawable/selector_tooltip_azul_estado"
+        app:endIconMode="custom"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toBottomOf="@+id/tilCAU">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietEstadoAutoconsumidor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:editable="false"
-            android:hint="Estado solicitud alta autoconsumidor"
-            android:text="Null"/>
+            style="@style/DetallesSmartSolar_TextInputEditText"
+            android:hint="Estado solicitud alta autoconsumidor" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,12 +64,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tilEstadoAutoconsumidor">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:editable="false"
-            android:hint="Tipo autoconsumo"
-            android:text="Null" />
+            android:id="@+id/tietTipoConsumo"
+            style="@style/DetallesSmartSolar_TextInputEditText"
+            android:hint="Tipo autoconsumo"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,15 +79,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tilTipoConsumo">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:editable="false"
-            android:hint="Compensación de excedentes"
-            android:text="Null" />
+            android:id="@+id/tietCompensacion"
+            style="@style/DetallesSmartSolar_TextInputEditText"
+            android:hint="Compensación de excedentes" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPotenciaInstalacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/GlobalMarginTopDetallesSmartSolar"
@@ -106,11 +94,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tilCompensacion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:editable="false"
-            android:hint="Potencia de instalación"
-            android:text="Null" />
+            android:id="@+id/tietPotenciaInstalacion"
+            style="@style/DetallesSmartSolar_TextInputEditText"
+            android:hint="Potencia de instalación" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

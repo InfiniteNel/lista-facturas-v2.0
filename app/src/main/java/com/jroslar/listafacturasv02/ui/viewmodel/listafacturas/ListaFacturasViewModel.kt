@@ -27,7 +27,7 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
         loadingData()
     }
 
-    fun loadingData() {
+    private fun loadingData() {
         viewModelScope.launch {
             _state.postValue(ListaFacturasResult.LOADING)
             _data.postValue(emptyList())

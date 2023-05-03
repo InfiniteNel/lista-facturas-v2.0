@@ -1,8 +1,11 @@
 package com.jroslar.listafacturasv02.di
 
 import co.infinum.retromock.Retromock
+import com.jroslar.listafacturasv02.data.DetallesRepository
 import com.jroslar.listafacturasv02.data.FacturasRepository
+import com.jroslar.listafacturasv02.data.network.DetallesService
 import com.jroslar.listafacturasv02.data.network.FacturasService
+import com.jroslar.listafacturasv02.domain.GetDetallesFromApiUseCase
 import com.jroslar.listafacturasv02.domain.GetFacturasFromApiUseCase
 import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
 import io.ktor.client.*
@@ -24,7 +27,12 @@ val dataModule = module {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     }
-    single {
+    single(named(Qualifier.FacturasRetromock)) {
+        Retromock.Builder()
+            .retrofit(get())
+            .build()
+    }
+    single(named(Qualifier.DetallesRetromock)) {
         Retromock.Builder()
             .retrofit(get())
             .build()
@@ -40,13 +48,19 @@ val dataModule = module {
         }
     }
 
-    factoryOf(::FacturasService)
+    factory { FacturasService(get(), get<Retromock>(named(Qualifier.FacturasRetromock)), get()) }
+    factory { DetallesService(get(), get<Retromock>(named(Qualifier.DetallesRetromock))) }
     factoryOf(::FacturasRepository)
+    factoryOf(::DetallesRepository)
 
     factoryOf(::GetFacturasFromApiUseCase)
     factoryOf(::GetFacturasLocalUseCase)
+    factoryOf(::GetDetallesFromApiUseCase)
 }
 
 enum class Qualifier {
-    ApiRequestListaFacturas
+    ApiRequestListaFacturas,
+    ApiRequestDetalles,
+    DetallesRetromock,
+    FacturasRetromock
 }

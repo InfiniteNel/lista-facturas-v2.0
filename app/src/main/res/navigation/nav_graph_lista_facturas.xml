@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_lista_facturas"
     app:startDestination="@id/ListaFacturasFragment">
-
+    
     <fragment
         android:id="@+id/ListaFacturasFragment"
         android:name="com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment"

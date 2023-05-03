@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/cambiarLlegadaDatos"
-        android:icon="@drawable/baseline_change_circle_24"
-        app:showAsAction="ifRoom"
-        android:title="TODO" />
+    <item android:id="@+id/changeRetrofit"
+        android:title="Retrofit" />
+    <item android:id="@+id/changeRetromock"
+        android:title="Retromock" />
+    <item android:id="@+id/changeKtor"
+        android:title="Ktor" />
 </menu>

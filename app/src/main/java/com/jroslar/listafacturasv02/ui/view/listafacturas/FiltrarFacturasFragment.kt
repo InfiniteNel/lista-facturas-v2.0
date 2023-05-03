@@ -64,7 +64,7 @@ class FiltrarFacturasFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _viewModel = getViewModel<FiltrarFacturasViewModel>()
+        _viewModel = getViewModel()
 
         viewModel.getList()
 
