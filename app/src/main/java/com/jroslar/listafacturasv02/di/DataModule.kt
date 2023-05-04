@@ -1,6 +1,7 @@
 package com.jroslar.listafacturasv02.di
 
 import co.infinum.retromock.Retromock
+import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_SERVIDOR_DETALLES
 import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_SERVIDOR_FACTURAS
 import com.jroslar.listafacturasv02.data.DetallesRepository
 import com.jroslar.listafacturasv02.data.FacturasRepository
@@ -22,21 +23,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val dataModule = module {
-    single(named(Qualifier.ApiRequestListaFacturas)) { URL_SERVIDOR_FACTURAS }
-    single {
+    single(named(Qualifier.FacturasRetrofit)) {
         Retrofit.Builder()
-        .baseUrl(get<String>(named(Qualifier.ApiRequestListaFacturas)))
+        .baseUrl(URL_SERVIDOR_FACTURAS)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     }
+    single(named(Qualifier.DetallesRetrofit)) {
+        Retrofit.Builder()
+            .baseUrl(URL_SERVIDOR_DETALLES)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
     single(named(Qualifier.FacturasRetromock)) {
         Retromock.Builder()
-            .retrofit(get())
+            .retrofit(get(named(Qualifier.FacturasRetrofit)))
             .build()
     }
     single(named(Qualifier.DetallesRetromock)) {
         Retromock.Builder()
-            .retrofit(get())
+            .retrofit(get(named(Qualifier.DetallesRetrofit)))
             .build()
     }
     single {
@@ -52,8 +58,8 @@ val dataModule = module {
         }
     }
 
-    factory { FacturasService(get(), get<Retromock>(named(Qualifier.FacturasRetromock)), get()) }
-    factory { DetallesService(get(), get<Retromock>(named(Qualifier.DetallesRetromock))) }
+    factory { FacturasService(get(named(Qualifier.FacturasRetrofit)), get(named(Qualifier.FacturasRetromock)), get()) }
+    factory { DetallesService(get(named(Qualifier.DetallesRetrofit)), get(named(Qualifier.DetallesRetromock))) }
     factoryOf(::FacturasRepository)
     factoryOf(::DetallesRepository)
 
@@ -63,8 +69,8 @@ val dataModule = module {
 }
 
 enum class Qualifier {
-    ApiRequestListaFacturas,
-    ApiRequestDetalles,
+    FacturasRetrofit,
+    DetallesRetrofit,
     DetallesRetromock,
     FacturasRetromock
 }

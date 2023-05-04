@@ -6,6 +6,10 @@ class Constantes {
 
         const val URL_OBJECT_FACTURAS = "facturas"
 
+        const val URL_SERVIDOR_DETALLES = "https://viewnextandroid2.wiremockapi.cloud/"
+
+        const val URL_OBJECT_DETALLES = "facturas"
+
         const val MONEDA_VALUE = "€"
 
         enum class DescEstado(val descEstado: String) {

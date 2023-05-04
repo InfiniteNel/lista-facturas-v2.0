@@ -27,13 +27,9 @@
 
     <TextView
         android:id="@+id/tvTitlePracticasAndroid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TitleFragment"
         android:layout_marginStart="20dp"
         android:text="Prácticas Android"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbarPractica" />
 

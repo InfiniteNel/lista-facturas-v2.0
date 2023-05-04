@@ -24,11 +24,9 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TitleFragment"
             android:layout_marginStart="20dp"
-            android:text="Smart Solar"
-            android:textAppearance="@style/Toolbar.TitleText" />
+            android:text="Smart Solar" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

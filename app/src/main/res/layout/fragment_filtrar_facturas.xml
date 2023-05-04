@@ -23,12 +23,8 @@
 
             <TextView
                 android:id="@+id/tvTitleFiltrarFactura"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TitleFragment"
                 android:text="Filtrar Facturas"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"

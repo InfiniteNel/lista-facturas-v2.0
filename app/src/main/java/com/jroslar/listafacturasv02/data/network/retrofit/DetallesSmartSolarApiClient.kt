@@ -2,8 +2,10 @@ package com.jroslar.listafacturasv02.data.network.retrofit
 
 import co.infinum.retromock.meta.Mock
 import co.infinum.retromock.meta.MockResponse
+import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_OBJECT_DETALLES
 import com.jroslar.listafacturasv02.data.network.model.DetallesResponse
 import retrofit2.Response
+import retrofit2.http.GET
 
 interface DetallesSmartSolarApiClient {
     @Mock
@@ -14,5 +16,6 @@ interface DetallesSmartSolarApiClient {
             "  \"compensacionExcedentes\": \"Precio PVPC\",\n" +
             "  \"potenciaInstalacion\": \"5kWp\",\n" +
             "}")
+    @GET(URL_OBJECT_DETALLES)
     suspend fun getDetallesSmartSolar(): Response<DetallesResponse>
 }
