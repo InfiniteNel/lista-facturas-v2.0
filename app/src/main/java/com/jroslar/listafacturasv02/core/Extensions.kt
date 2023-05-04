@@ -1,5 +1,6 @@
 package com.jroslar.listafacturasv02.core
 
+import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import java.time.LocalDate
@@ -9,6 +10,9 @@ import java.util.*
 class Extensions {
 
     companion object{
+        fun Int.getResourceStringAndroid(context: Context): String {
+            return context.resources.getString(this)
+        }
         @RequiresApi(Build.VERSION_CODES.O)
         fun String.castStringToDate(): LocalDate {
             var date: LocalDate = LocalDate.now()

@@ -2,6 +2,7 @@ package com.jroslar.listafacturasv02.data.network.retrofit
 
 import co.infinum.retromock.meta.Mock
 import co.infinum.retromock.meta.MockResponse
+import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_OBJECT_FACTURAS
 import com.jroslar.listafacturasv02.data.network.model.FacturasResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -54,6 +55,6 @@ interface FacturasApiClient {
             "  ]\n" +
             "\n" +
             "}")
-    @GET("facturas")
+    @GET(URL_OBJECT_FACTURAS)
     suspend fun getAllFacturas(): Response<FacturasResponse>
 }

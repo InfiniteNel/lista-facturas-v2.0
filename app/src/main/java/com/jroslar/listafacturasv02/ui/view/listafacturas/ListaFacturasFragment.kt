@@ -27,8 +27,8 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
     private val viewModel get() = _viewModel!!
 
     companion object {
-        val MAX_IMPORTE: String = "maximo_importe"
-        val DATA_FILTER: String = "data_filter"
+        const val MAX_IMPORTE: String = "maximo_importe"
+        const val DATA_FILTER: String = "data_filter"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -8,17 +8,16 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import android.widget.SeekBar
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.data.model.DescEstado
+import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
+import com.jroslar.listafacturasv02.core.Constantes.Companion.MONEDA_VALUE
 import com.jroslar.listafacturasv02.core.Extensions.Companion.castStringToDate
 import com.jroslar.listafacturasv02.data.model.FacturasModel
 import com.jroslar.listafacturasv02.databinding.FragmentFiltrarFacturasBinding
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment.Companion.DATA_FILTER
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment.Companion.MAX_IMPORTE
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.FiltrarFacturasViewModel
-import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -73,13 +72,13 @@ class FiltrarFacturasFragment : Fragment() {
             val maxImporte = floor(bundle.getFloat(MAX_IMPORTE).toDouble()).toInt() + 1
             binding.sbImporte.max = maxImporte
             binding.sbImporte.progress = maxImporte
-            binding.tvMaxImporte.text = "${maxImporte}€"
+            binding.tvMaxImporte.text = "$maxImporte$MONEDA_VALUE"
 
             binding.sbImporte.setOnSeekBarChangeListener(object :
                 SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(seek: SeekBar,
                                                progress: Int, fromUser: Boolean) {
-                    binding.tvRankImporte.text = "${binding.sbImporte.min}€  -  ${binding.sbImporte.progress}€"
+                    binding.tvRankImporte.text = "${binding.sbImporte.min}$MONEDA_VALUE  -  ${binding.sbImporte.progress}$MONEDA_VALUE"
                 }
 
                 override fun onStartTrackingTouch(seek: SeekBar) {
@@ -142,11 +141,11 @@ class FiltrarFacturasFragment : Fragment() {
 
     private fun comprobarCheckBoxs() {
         var checks = mutableListOf<String>()
-        if (binding.chAnuladas.isChecked) checks.add(DescEstado.anuladas.descEstado)
-        if (binding.chCuotaFija.isChecked) checks.add(DescEstado.cuotafija.descEstado)
-        if (binding.chPedientesDePago.isChecked) checks.add(DescEstado.pedientedepago.descEstado)
-        if (binding.chPagado.isChecked) checks.add(DescEstado.pagada.descEstado)
-        if (binding.chPlanDePago.isChecked) checks.add(DescEstado.plandepago.descEstado)
+        if (binding.chAnuladas.isChecked) checks.add(DescEstado.Anuladas.descEstado)
+        if (binding.chCuotaFija.isChecked) checks.add(DescEstado.CuotaFija.descEstado)
+        if (binding.chPedientesDePago.isChecked) checks.add(DescEstado.PedienteDePago.descEstado)
+        if (binding.chPagado.isChecked) checks.add(DescEstado.Pagada.descEstado)
+        if (binding.chPlanDePago.isChecked) checks.add(DescEstado.PlanDePago.descEstado)
 
         viewModel.filterListByCheckBox(checks)
     }

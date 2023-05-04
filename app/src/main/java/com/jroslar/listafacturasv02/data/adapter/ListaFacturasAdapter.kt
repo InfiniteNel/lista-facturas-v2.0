@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.data.model.DescEstado
+import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
+import com.jroslar.listafacturasv02.core.Constantes.Companion.MONEDA_VALUE
 import com.jroslar.listafacturasv02.core.Extensions.Companion.castStringToDate
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.databinding.ItemFacturasBinding
@@ -33,10 +34,10 @@ class ListaFacturasAdapter(private val listener: OnManageFactura):
                 binding.tvFacturaFecha.text = fecha.substring(0,4).uppercase() + fecha.substring(4)
             } else binding.tvFacturaFecha.text = factura.fecha
 
-            binding.tvFacturaPrecio.text = factura.importeOrdenacion.toString().plus("€")
+            binding.tvFacturaPrecio.text = factura.importeOrdenacion.toString().plus(MONEDA_VALUE)
             binding.tvFacturaTipo.text = tipo
             when(tipo) {
-                DescEstado.pedientedepago.descEstado -> binding.tvFacturaTipo.setTextColor(Color.RED)
+                DescEstado.PedienteDePago.descEstado -> binding.tvFacturaTipo.setTextColor(Color.RED)
                 else -> binding.tvFacturaTipo.setTextColor(Color.GRAY)
             }
 
@@ -54,6 +55,6 @@ class ListaFacturasAdapter(private val listener: OnManageFactura):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listaFacturas.get(position), listener)
+        holder.bind(listaFacturas[position], listener)
     }
 }

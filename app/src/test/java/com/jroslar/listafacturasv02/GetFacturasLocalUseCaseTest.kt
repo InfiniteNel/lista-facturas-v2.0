@@ -2,7 +2,7 @@ package com.jroslar.listafacturasv02
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.jroslar.listafacturasv02.data.FacturasRepository
-import com.jroslar.listafacturasv02.data.model.DescEstado
+import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
 import io.mockk.MockKAnnotations
@@ -43,7 +43,7 @@ class GetFacturasLocalUseCaseTest {
     @Test
     fun `when database is not empty then return list facturas`() = runBlocking {
         //Give
-        val myList = listOf(FacturaModel(DescEstado.pedientedepago.descEstado, 30.3F, "20/12/2018"))
+        val myList = listOf(FacturaModel(DescEstado.PedienteDePago.descEstado, 30.3F, "20/12/2018"))
         coEvery { facturasRepository.getAllFacturasLocal() } returns myList
 
         //When

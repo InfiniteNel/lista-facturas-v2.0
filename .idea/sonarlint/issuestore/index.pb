@@ -1,23 +1,7 @@
 
-Ž
-^app/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarEnergiaFragment.kt,2\f\2fbc8165aa80ba8426ced92b1cd1f319ac92742e
-
-Oapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/AdapterPracticas.kt,a\4\a42c77b2b4d1a237a844c2cba8cf80a1f3dec550
-ƒ
-Sapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/ListaFacturasAdapter.kt,d\c\dcb12eaf0f5f5aa6928ff4d3dc89428c5a82e701
-q
-Aapp/src/main/java/com/jroslar/listafacturasv02/core/Extensions.kt,3\e\3e8c67aa678af6439bff6e7586c5271fd10af519
-w
-Gapp/src/main/java/com/jroslar/listafacturasv02/data/model/DescEstado.kt,2\c\2cfc2bdbcd1793ad13903f2706b9e3922e0da351
-–
-fapp/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/DetallesFacturasDialogFragment.kt,9\0\9057301a68b46179651c3c8971f867074de45210
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-h
-8app/src/main/java/com/jroslar/listafacturasv02/ui/App.kt,0\6\069d3caf0c139a0d91e943e0dfc6d58ecdc1f310
-
-Oapp/src/main/java/com/jroslar/listafacturasv02/data/database/dao/FacturasDao.kt,6\c\6c2822bdd4a9201775dac2dd7ba55ca7fb30d6cb
-€
-Papp/src/main/java/com/jroslar/listafacturasv02/data/database/FacturasDatabase.kt,5\7\57da38ac7de48c2f96f2d5fb7387916437739152
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
+€
+Papp/src/androidTest/java/com/jroslar/listafacturasv02/ExampleInstrumentedTest.kt,5\c\5ca181abd4d219fca5c8f2d863fbaa8127e6dee8

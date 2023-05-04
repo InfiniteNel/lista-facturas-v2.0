@@ -9,6 +9,11 @@ import retrofit2.Retrofit
 class DetallesService constructor(private val retrofit: Retrofit, private val retromock: Retromock) {
     suspend fun getDetalles(): DetallesModel {
         val response = retromock.create(DetallesSmartSolarApiClient::class.java).getDetallesSmartSolar()
-        return response.body()?.toModelDetalles() ?: DetallesModel("null","null","null","null","null")
+        return response.body()?.toModelDetalles() ?: DetallesModel(
+            "undefined",
+            "undefined",
+            "undefined",
+            "undefined",
+            "undefined")
     }
 }

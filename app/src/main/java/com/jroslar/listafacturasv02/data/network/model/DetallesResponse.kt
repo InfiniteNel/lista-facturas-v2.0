@@ -1,7 +1,9 @@
 package com.jroslar.listafacturasv02.data.network.model
 
 import com.jroslar.listafacturasv02.data.model.DetallesModel
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class DetallesResponse(
     val cau:String,
     val estadoSolicitudAutoConsumidor:String,

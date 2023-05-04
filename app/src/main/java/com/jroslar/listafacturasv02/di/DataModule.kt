@@ -1,6 +1,7 @@
 package com.jroslar.listafacturasv02.di
 
 import co.infinum.retromock.Retromock
+import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_SERVIDOR_FACTURAS
 import com.jroslar.listafacturasv02.data.DetallesRepository
 import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.network.DetallesService
@@ -13,6 +14,7 @@ import io.ktor.client.engine.android.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
+import io.ktor.http.*
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -20,7 +22,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val dataModule = module {
-    single(named(Qualifier.ApiRequestListaFacturas)) { "https://viewnextandroid.wiremockapi.cloud/" }
+    single(named(Qualifier.ApiRequestListaFacturas)) { URL_SERVIDOR_FACTURAS }
     single {
         Retrofit.Builder()
         .baseUrl(get<String>(named(Qualifier.ApiRequestListaFacturas)))
@@ -43,7 +45,9 @@ val dataModule = module {
                 level = LogLevel.ALL
             }
             install(JsonFeature) {
-                serializer = KotlinxSerializer()
+                val json = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+                serializer = KotlinxSerializer(json)
+                acceptContentTypes = acceptContentTypes + ContentType.Any
             }
         }
     }
