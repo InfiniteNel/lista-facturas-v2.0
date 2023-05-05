@@ -23,30 +23,30 @@
 
     <TextView
         android:id="@+id/tvInfoTextMiInstalacionSmartSolar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/GlobalMarginSideSmartSolar"
-        android:text="Aquí tienes los datos de tu instalación fotovoltaica en tiempo real."
+        android:text="@string/tvInfoTextMiInstalacionSmartSolarText"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvAutoconsumoMiInstalacionSmartSolar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Autoconsumo: "
+        android:layout_marginTop="@dimen/dimen_size_40"
+        android:text="@string/tvAutoconsumoMiInstalacionSmartSolarText"
         android:textColor="@color/grey"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoTextMiInstalacionSmartSolar" />
 
     <TextView
         android:id="@+id/tvAutoConsumoValueMiInstalacionSmartSolar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="92%"
+        android:layout_marginTop="@dimen/dimen_size_40"
+        android:text="@string/tvAutoConsumoValueMiInstalacionSmartSolarText"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvAutoconsumoMiInstalacionSmartSolar"
         app:layout_constraintStart_toEndOf="@+id/tvAutoconsumoMiInstalacionSmartSolar"
@@ -54,9 +54,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="328dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="@dimen/dimen_size_0"
+        android:layout_height="@dimen/dimen_size_328"
+        android:layout_marginTop="@dimen/dimen_size_10"
         android:src="@mipmap/ic_smart_solar_mi_instalacion"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"

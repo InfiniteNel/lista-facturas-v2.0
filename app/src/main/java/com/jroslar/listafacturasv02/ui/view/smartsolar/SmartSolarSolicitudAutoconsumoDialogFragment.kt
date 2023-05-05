@@ -33,7 +33,7 @@ class SmartSolarSolicitudAutoconsumoDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.vtAceptar.setOnClickListener {
+        binding.vtAceptarSmartSolar.setOnClickListener {
             dismiss()
         }
     }

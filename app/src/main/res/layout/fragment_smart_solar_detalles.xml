@@ -31,9 +31,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietCAU"
+            android:id="@+id/tietCAUSmaerSolar"
             style="@style/DetallesSmartSolar_TextInputEditText"
-            android:hint="CAU (Código Autoconsumo)"/>
+            android:hint="@string/tietCAUSmaerSolarHint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,9 +49,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tilCAU">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietEstadoAutoconsumidor"
+            android:id="@+id/tietEstadoAutoconsumidorSmartSolar"
             style="@style/DetallesSmartSolar_TextInputEditText"
-            android:hint="Estado solicitud alta autoconsumidor" />
+            android:hint="@string/tietEstadoAutoconsumidorSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,9 +64,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tilEstadoAutoconsumidor">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietTipoConsumo"
+            android:id="@+id/tietTipoConsumoSmartSolar"
             style="@style/DetallesSmartSolar_TextInputEditText"
-            android:hint="Tipo autoconsumo"/>
+            android:hint="@string/tietTipoConsumoSmartSolarHint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,9 +79,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tilTipoConsumo">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietCompensacion"
+            android:id="@+id/tietCompensacionSmartSolar"
             style="@style/DetallesSmartSolar_TextInputEditText"
-            android:hint="Compensación de excedentes" />
+            android:hint="@string/tietCompensacionSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -94,8 +94,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tilCompensacion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietPotenciaInstalacion"
+            android:id="@+id/tietPotenciaInstalacionSmartSolar"
             style="@style/DetallesSmartSolar_TextInputEditText"
-            android:hint="Potencia de instalación" />
+            android:hint="@string/tietPotenciaInstalacionSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

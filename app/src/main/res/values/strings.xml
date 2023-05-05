@@ -1,20 +1,58 @@
 <resources>
     <string name="app_name">Lista facturas V.0.2</string>
+
     <!-- Fragment Filtrar Lista -->
     <string name="filtrar_facturas_fragment_label">Filtrar facturas</string>
-    <string name="tvTitleFechaText">Con fecha de emisión</string>
-    <string name="tvFechaDesdeText">Desde:</string>
-    <string name="tvFechaHastaText">Hasta:</string>
-    <string name="tvTitleImporteText">Por un importe</string>
-    <string name="tvTitleEstadoText">Por estado</string>
-    <string name="btFechaText">dia/mes/año</string>
+    <string name="tvTitleFechaFiltrarFacturaText">Con fecha de emisión</string>
+    <string name="tvFechaDesdeFiltrarFacturaText">Desde:</string>
+    <string name="tvFechaHastaFiltrarFacturaText">Hasta:</string>
+    <string name="tvTitleImporteFiltrarFacturaText">Por un importe</string>
+    <string name="tvTitleEstadoFiltrarFacturaText">Por estado</string>
+    <string name="btFechaFiltrarFacturaText">dia/mes/año</string>
+    <string name="tvTitleFiltrarFacturaText">Filtrar Facturas</string>
+    <string name="btAplicarFiltroFiltrarFacturaText">Aplicar filtros</string>
+    <string name="btEliminarFiltroFiltrarFacturaText">Eliminar filtros</string>
+    <string name="tvRankImporteFiltrarFacturaText">0€  -  0€</string>
+    <string name="chPlanDePagoFiltrarFacturaText">Plan de pago</string>
+    <string name="chPedientesDePagoFiltrarFacturaText">Pedientes de pago</string>
+    <string name="chCuotaFijaFiltrarFacturaText">Cuota Fija</string>
+    <string name="chAnuladasFiltrarFacturaText">Anuladas</string>
+    <string name="chPagadoFiltrarFacturaText">Pagadas</string>
 
     <!-- Fragment Lista Facturas -->
     <string name="lista_facturas_fragment_label">Facturas</string>
+    <string name="toolbarDetalleBackTextListaFacturas">Consumo</string>
+    <string name="tvInformacionDetallesFacturasText">Información</string>
+    <string name="tvNoFuncionalDetallesFacturasText">Esta funcionalidad aún no está disponible</string>
+    <string name="btCerrarPopUpDetallesFacturasText">Cerrar</string>
+    <string name="tvTitleFacturaListaFacturasText">Facturas</string>
+    <string name="tvTitleNoDataListaFacturasText">No se encontraron facturas</string>
 
-    <!-- Fragment Smart Solar -->
+    <!-- Activity Smart Solar -->
     <string name="title_activity_smart_solar">SmartSolarActivity</string>
     <string name="tab_text_1">Mi instalación</string>
     <string name="tab_text_2">Energía</string>
     <string name="tab_text_3">Detalles</string>
+    <string name="toolbarDetalleBackText">Atrás</string>
+    <string name="tvTitleSmartSolarText">Smart Solar</string>
+
+    <!-- Fragment Smart Solar Detalles -->
+    <string name="tvEstadoSolicitudSmartSolarText">Estado solicitud autoconsumo</string>
+    <string name="tvTiempoEstimadoSmartSolarText">El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distribuidora</string>
+    <string name="vtAceptarSmartSolarText">Aceptar</string>
+    <string name="tietCAUSmaerSolarHint">CAU (Código Autoconsumo)</string>
+    <string name="tietEstadoAutoconsumidorSmartSolarHint">Estado solicitud alta autoconsumidor</string>
+    <string name="tietTipoConsumoSmartSolarHint">Tipo autoconsumo</string>
+    <string name="tietCompensacionSmartSolarHint">Compensación de excedentes</string>
+    <string name="tietPotenciaInstalacionSmartSolarHint">Potencia de instalación</string>
+
+    <!-- Fragmetn Samrt Solar Mi Instalacion-->
+    <string name="tvInfoTextMiInstalacionSmartSolarText">Aquí tienes los datos de tu instalación fotovoltaica en tiempo real.</string>
+    <string name="tvAutoconsumoMiInstalacionSmartSolarText">"Autoconsumo: "</string>
+    <string name="tvAutoConsumoValueMiInstalacionSmartSolarText">92%</string>
+
+    <!-- Fragmetn Samrt Solar Energia-->
+    <string name="tvInfoTextEnergiaSmartSolarText">Estamos trabajando en mejorar la App. Tu paneles solares siguen produciendo en breve podrás seguir viendo tu producción solar. Sentimos las molestias.</string>
+
+
 </resources>

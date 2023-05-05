@@ -5,13 +5,13 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tvEstadoSolicitud"
+        android:id="@+id/tvEstadoSolicitudSmartSolar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:text="Estado solicitud autoconsumo"
+        android:layout_marginStart="@dimen/dimen_size_40"
+        android:layout_marginTop="@dimen/dimen_size_24"
+        android:layout_marginEnd="@dimen/dimen_size_40"
+        android:text="@string/tvEstadoSolicitudSmartSolarText"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,28 +19,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTiempoEstimado"
-        android:layout_width="0dp"
+        android:id="@+id/tvTiempoEstimadoSmartSolar"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/dimen_size_24"
         android:gravity="center_horizontal"
-        android:text="El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distribuidora"
+        android:text="@string/tvTiempoEstimadoSmartSolarText"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvEstadoSolicitud"
-        app:layout_constraintStart_toStartOf="@+id/tvEstadoSolicitud"
-        app:layout_constraintTop_toBottomOf="@+id/tvEstadoSolicitud" />
+        app:layout_constraintEnd_toEndOf="@+id/tvEstadoSolicitudSmartSolar"
+        app:layout_constraintStart_toStartOf="@+id/tvEstadoSolicitudSmartSolar"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoSolicitudSmartSolar" />
 
     <Button
-        android:id="@+id/vtAceptar"
+        android:id="@+id/vtAceptarSmartSolar"
         style="@style/botones_primarios"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="45dp"
-        android:text="Aceptar"
+        android:layout_marginTop="@dimen/dimen_size_24"
+        android:layout_marginBottom="@dimen/dimen_size_45"
+        android:text="@string/vtAceptarSmartSolarText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvTiempoEstimado"
-        app:layout_constraintStart_toStartOf="@+id/tvTiempoEstimado"
-        app:layout_constraintTop_toBottomOf="@+id/tvTiempoEstimado" />
+        app:layout_constraintEnd_toEndOf="@+id/tvTiempoEstimadoSmartSolar"
+        app:layout_constraintStart_toStartOf="@+id/tvTiempoEstimadoSmartSolar"
+        app:layout_constraintTop_toBottomOf="@+id/tvTiempoEstimadoSmartSolar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,15 +70,15 @@ class FiltrarFacturasFragment : Fragment() {
         val bundle = arguments
         if (bundle!=null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val maxImporte = floor(bundle.getFloat(MAX_IMPORTE).toDouble()).toInt() + 1
-            binding.sbImporte.max = maxImporte
-            binding.sbImporte.progress = maxImporte
-            binding.tvMaxImporte.text = "$maxImporte$MONEDA_VALUE"
+            binding.sbImporteFiltrarFactura.max = maxImporte
+            binding.sbImporteFiltrarFactura.progress = maxImporte
+            binding.tvMaxImporteFiltrarFactura.text = "$maxImporte$MONEDA_VALUE"
 
-            binding.sbImporte.setOnSeekBarChangeListener(object :
+            binding.sbImporteFiltrarFactura.setOnSeekBarChangeListener(object :
                 SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(seek: SeekBar,
                                                progress: Int, fromUser: Boolean) {
-                    binding.tvRankImporte.text = "${binding.sbImporte.min}$MONEDA_VALUE  -  ${binding.sbImporte.progress}$MONEDA_VALUE"
+                    binding.tvRankImporteFiltrarFactura.text = "${binding.sbImporteFiltrarFactura.min}$MONEDA_VALUE  -  ${binding.sbImporteFiltrarFactura.progress}$MONEDA_VALUE"
                 }
 
                 override fun onStartTrackingTouch(seek: SeekBar) {
@@ -91,22 +91,22 @@ class FiltrarFacturasFragment : Fragment() {
             })
         }
 
-        binding.btFechaDesde.setOnClickListener {
-            showDatePicker(binding.btFechaDesde)
+        binding.btFechaDesdeFiltrarFactura.setOnClickListener {
+            showDatePicker(binding.btFechaDesdeFiltrarFactura)
         }
 
-        binding.btFechaHasta.setOnClickListener {
-            showDatePicker(binding.btFechaHasta)
+        binding.btFechaHastaFiltrarFactura.setOnClickListener {
+            showDatePicker(binding.btFechaHastaFiltrarFactura)
         }
 
-        binding.btEliminarFiltro.setOnClickListener {
+        binding.btEliminarFiltroFiltrarFactura.setOnClickListener {
             eliminarFiltros()
         }
 
-        binding.btAplicarFiltro.setOnClickListener{
+        binding.btAplicarFiltroFiltrarFactura.setOnClickListener{
             comprobarCheckBoxs()
             comprobarFechas()
-            viewModel.filterListByImporte(binding.sbImporte.progress)
+            viewModel.filterListByImporte(binding.sbImporteFiltrarFactura.progress)
 
             var bundle = Bundle()
             bundle.putParcelable(DATA_FILTER, FacturasModel(viewModel._state.value!!.size, viewModel._state.value!!))
@@ -132,36 +132,36 @@ class FiltrarFacturasFragment : Fragment() {
     }
 
     private fun comprobarFechas() {
-        var text = binding.btFechaDesde.text
+        var text = binding.btFechaDesdeFiltrarFactura.text
         val regex = "\\d{1,2} [A-Z a-z]{3} \\d{4}".toRegex()
         if (text != null && regex.matches(text)) viewModel.filterlistByFechaDesde(text.toString())
-        text = binding.btFechaHasta.text
+        text = binding.btFechaHastaFiltrarFactura.text
         if (text != null && regex.matches(text)) viewModel.filterlistByFechaHasta(text.toString())
     }
 
     private fun comprobarCheckBoxs() {
         var checks = mutableListOf<String>()
-        if (binding.chAnuladas.isChecked) checks.add(DescEstado.Anuladas.descEstado)
-        if (binding.chCuotaFija.isChecked) checks.add(DescEstado.CuotaFija.descEstado)
-        if (binding.chPedientesDePago.isChecked) checks.add(DescEstado.PedienteDePago.descEstado)
-        if (binding.chPagado.isChecked) checks.add(DescEstado.Pagada.descEstado)
-        if (binding.chPlanDePago.isChecked) checks.add(DescEstado.PlanDePago.descEstado)
+        if (binding.chAnuladasFiltrarFactura.isChecked) checks.add(DescEstado.Anuladas.descEstado)
+        if (binding.chCuotaFijaFiltrarFactura.isChecked) checks.add(DescEstado.CuotaFija.descEstado)
+        if (binding.chPedientesDePagoFiltrarFactura.isChecked) checks.add(DescEstado.PedienteDePago.descEstado)
+        if (binding.chPagadoFiltrarFactura.isChecked) checks.add(DescEstado.Pagada.descEstado)
+        if (binding.chPlanDePagoFiltrarFactura.isChecked) checks.add(DescEstado.PlanDePago.descEstado)
 
         viewModel.filterListByCheckBox(checks)
     }
 
     private fun eliminarFiltros() {
-        binding.chAnuladas.isChecked = false
-        binding.chCuotaFija.isChecked = false
-        binding.chPedientesDePago.isChecked = false
-        binding.chPagado.isChecked = false
-        binding.chPlanDePago.isChecked = false
+        binding.chAnuladasFiltrarFactura.isChecked = false
+        binding.chCuotaFijaFiltrarFactura.isChecked = false
+        binding.chPedientesDePagoFiltrarFactura.isChecked = false
+        binding.chPagadoFiltrarFactura.isChecked = false
+        binding.chPlanDePagoFiltrarFactura.isChecked = false
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            binding.sbImporte.progress = binding.sbImporte.max
+            binding.sbImporteFiltrarFactura.progress = binding.sbImporteFiltrarFactura.max
         }
 
-        binding.btFechaDesde.text = null
-        binding.btFechaHasta.text = null
+        binding.btFechaDesdeFiltrarFactura.text = null
+        binding.btFechaHastaFiltrarFactura.text = null
     }
 }

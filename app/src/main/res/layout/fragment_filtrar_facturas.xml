@@ -7,11 +7,11 @@
     tools:context=".ui.view.listafacturas.FiltrarFacturasFragment">
 
     <ScrollView
-        android:id="@+id/nsvScrollFiltrar"
+        android:id="@+id/nsvScrollFiltrarFacturas"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btAplicarFiltro"
+        android:layout_height="@dimen/dimen_size_0"
+        android:layout_marginBottom="@dimen/dimen_size_20"
+        app:layout_constraintBottom_toTopOf="@+id/btAplicarFiltroFiltrarFactura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,243 +24,241 @@
             <TextView
                 android:id="@+id/tvTitleFiltrarFactura"
                 style="@style/TitleFragment"
-                android:text="Filtrar Facturas"
-                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
+                android:text="@string/tvTitleFiltrarFacturaText"
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerechoFiltrarFactura"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvTitleFecha"
+                android:id="@+id/tvTitleFechaFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/tvTitleFechaText"
+                android:layout_marginTop="@dimen/dimen_size_20"
+                android:text="@string/tvTitleFechaFiltrarFacturaText"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/tvTitleFiltrarFactura"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitleFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btFechaDesde"
+                android:id="@+id/btFechaDesdeFiltrarFactura"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="6dp"
+                android:layout_height="@dimen/dimen_size_40"
+                android:layout_marginTop="@dimen/dimen_size_6"
                 android:background="@drawable/shape_fecha_button_background"
                 android:ems="8"
-                android:hint="@string/btFechaText"
+                android:hint="@string/btFechaFiltrarFacturaText"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/tvFechaDesde" />
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvFechaDesdeFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvFechaDesde"
+                android:id="@+id/tvFechaDesdeFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/tvFechaDesdeText"
+                android:layout_marginTop="@dimen/dimen_size_16"
+                android:text="@string/tvFechaDesdeFiltrarFacturaText"
                 android:textColor="@color/grey"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleFecha" />
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleFechaFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btFechaHasta"
+                android:id="@+id/btFechaHastaFiltrarFactura"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="6dp"
+                android:layout_height="@dimen/dimen_size_40"
+                android:layout_marginStart="@dimen/dimen_size_16"
+                android:layout_marginTop="@dimen/dimen_size_6"
                 android:background="@drawable/shape_fecha_button_background"
                 android:ems="8"
-                android:hint="@string/btFechaText"
+                android:hint="@string/btFechaFiltrarFacturaText"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@+id/btFechaDesde"
-                app:layout_constraintTop_toBottomOf="@+id/tvFechaHasta" />
+                app:layout_constraintStart_toEndOf="@+id/btFechaDesdeFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvFechaHastaFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvFechaHasta"
+                android:id="@+id/tvFechaHastaFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/tvFechaHastaText"
+                android:layout_marginStart="@dimen/dimen_size_16"
+                android:layout_marginTop="@dimen/dimen_size_16"
+                android:text="@string/tvFechaHastaFiltrarFacturaText"
                 android:textColor="@color/grey"
-                app:layout_constraintStart_toEndOf="@+id/btFechaDesde"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleFecha" />
+                app:layout_constraintStart_toEndOf="@+id/btFechaDesdeFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleFechaFiltrarFactura" />
 
             <View
-                android:id="@+id/dFechaImporte"
+                android:id="@+id/dFechaImporteFiltrarFactura"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="12dp"
+                android:layout_height="@dimen/dimen_size_1"
+                android:layout_marginStart="@dimen/dimen_size_12"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="@dimen/dimen_size_12"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintEnd_toEndOf="@id/dlMargenDerecho"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/btFechaHasta" />
+                app:layout_constraintEnd_toEndOf="@id/dlMargenDerechoFiltrarFactura"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/btFechaHastaFiltrarFactura" />
 
             <View
-                android:id="@+id/dImporteEstado"
+                android:id="@+id/dImporteEstadoFiltrarFactura"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="12dp"
+                android:layout_height="@dimen/dimen_size_1"
+                android:layout_marginStart="@dimen/dimen_size_12"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="@dimen/dimen_size_12"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintEnd_toEndOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintStart_toStartOf="@id/dlMargenDerecho"
-                app:layout_constraintTop_toBottomOf="@+id/sbImporte" />
+                app:layout_constraintEnd_toEndOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintStart_toStartOf="@id/dlMargenDerechoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/sbImporteFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvTitleImporte"
+                android:id="@+id/tvTitleImporteFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
-                android:text="@string/tvTitleImporteText"
+                android:text="@string/tvTitleImporteFiltrarFacturaText"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/dFechaImporte" />
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/dFechaImporteFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
-                android:id="@+id/sbImporte"
+                android:id="@+id/sbImporteFiltrarFactura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/dimen_size_4"
                 android:max="0"
                 android:min="0"
                 android:progressTint="@color/green_500"
                 android:thumbTint="@color/green_500"
-                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/tvMinImporte" />
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerechoFiltrarFactura"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvMinImporteFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvTitleEstado"
+                android:id="@+id/tvTitleEstadoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
-                android:text="@string/tvTitleEstadoText"
+                android:text="@string/tvTitleEstadoFiltrarFacturaText"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/dImporteEstado" />
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/dImporteEstadoFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/chPagado"
+                android:id="@+id/chPagadoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Pagadas"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleEstado" />
+                android:text="@string/chPagadoFiltrarFacturaText"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleEstadoFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/chAnuladas"
+                android:id="@+id/chAnuladasFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Anuladas"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/chPagado" />
+                android:text="@string/chAnuladasFiltrarFacturaText"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/chPagadoFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/chCuotaFija"
+                android:id="@+id/chCuotaFijaFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Cuota Fija"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/chAnuladas" />
+                android:text="@string/chCuotaFijaFiltrarFacturaText"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/chAnuladasFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/chPedientesDePago"
+                android:id="@+id/chPedientesDePagoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Pedientes de pago"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/chCuotaFija" />
+                android:text="@string/chPedientesDePagoFiltrarFacturaText"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/chCuotaFijaFiltrarFactura" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/chPlanDePago"
+                android:id="@+id/chPlanDePagoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Plan de pago"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/chPedientesDePago" />
+                android:text="@string/chPlanDePagoFiltrarFacturaText"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/chPedientesDePagoFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvMinImporte"
+                android:id="@+id/tvMinImporteFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="0€"
-                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdo"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+                android:layout_marginTop="@dimen/dimen_size_8"
+                app:layout_constraintStart_toStartOf="@+id/dlMargenIzquierdoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporteFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvMaxImporte"
+                android:id="@+id/tvMaxImporteFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="0€"
-                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerecho"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+                android:layout_marginTop="@dimen/dimen_size_8"
+                app:layout_constraintEnd_toStartOf="@+id/dlMargenDerechoFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporteFiltrarFactura" />
 
             <TextView
-                android:id="@+id/tvRankImporte"
+                android:id="@+id/tvRankImporteFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="0€  -  0€"
+                android:layout_marginTop="@dimen/dimen_size_4"
+                android:text="@string/tvRankImporteFiltrarFacturaText"
                 android:textColor="@color/green_500"
-                app:layout_constraintEnd_toStartOf="@+id/tvMaxImporte"
+                app:layout_constraintEnd_toStartOf="@+id/tvMaxImporteFiltrarFactura"
                 app:layout_constraintHorizontal_bias="0.50"
-                app:layout_constraintStart_toEndOf="@+id/tvMinImporte"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporte" />
+                app:layout_constraintStart_toEndOf="@+id/tvMinImporteFiltrarFactura"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleImporteFiltrarFactura" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dlMargenIzquierdo"
+                android:id="@+id/dlMargenIzquierdoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="20dp" />
+                app:layout_constraintGuide_begin="@dimen/dimen_size_20" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dlMargenDerecho"
+                android:id="@+id/dlMargenDerechoFiltrarFactura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="20dp" />
+                app:layout_constraintGuide_end="@dimen/dimen_size_20" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btAplicarFiltro"
+        android:id="@+id/btAplicarFiltroFiltrarFactura"
         style="@style/botones_primarios"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="16dp"
-        android:text="Aplicar filtros"
-        app:layout_constraintBottom_toTopOf="@+id/btEliminarFiltro"
+        android:layout_marginStart="@dimen/dimen_size_44"
+        android:layout_marginEnd="@dimen/dimen_size_44"
+        android:layout_marginBottom="@dimen/dimen_size_16"
+        android:text="@string/btAplicarFiltroFiltrarFacturaText"
+        app:layout_constraintBottom_toTopOf="@+id/btEliminarFiltroFiltrarFactura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btEliminarFiltro"
+        android:id="@+id/btEliminarFiltroFiltrarFactura"
         style="@style/botones_secundarios"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:text="Eliminar filtros"
+        android:layout_marginBottom="@dimen/dimen_size_70"
+        android:text="@string/btEliminarFiltroFiltrarFacturaText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btAplicarFiltro"
-        app:layout_constraintStart_toStartOf="@+id/btAplicarFiltro" />
+        app:layout_constraintEnd_toEndOf="@+id/btAplicarFiltroFiltrarFactura"
+        app:layout_constraintStart_toStartOf="@+id/btAplicarFiltroFiltrarFactura" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

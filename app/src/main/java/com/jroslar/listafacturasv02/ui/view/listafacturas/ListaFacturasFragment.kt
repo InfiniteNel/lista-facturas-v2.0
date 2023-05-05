@@ -83,11 +83,11 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
             when(it) {
                 ListaFacturasViewModel.ListaFacturasResult.LOADING -> {
                     binding.loading.isVisible = true
-                    binding.tvTitleNoData.isVisible = false
+                    binding.tvTitleNoDataListaFacturas.isVisible = false
                 }
                 ListaFacturasViewModel.ListaFacturasResult.DATA -> {
                     binding.loading.isVisible = false
-                    binding.tvTitleNoData.isVisible = false
+                    binding.tvTitleNoDataListaFacturas.isVisible = false
                 }
                 ListaFacturasViewModel.ListaFacturasResult.NO_DATA -> {
                     showNoData()
@@ -108,7 +108,7 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
 
     private fun showNoData() {
         binding.loading.isVisible = false
-        binding.tvTitleNoData.isVisible = true
+        binding.tvTitleNoDataListaFacturas.isVisible = true
     }
 
     private fun intiAdapter() {

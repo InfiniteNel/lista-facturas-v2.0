@@ -18,15 +18,27 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
+            app:contentInsetStart="0dp"
             app:popupTheme="@style/Theme.ListaFacturasV02.PopupOverlay">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/toolbarDetalleBack"
+                    style="@style/toolbar_detalle_button_back"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/toolbarDetalleBackText"
+                    tools:ignore="TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/tvTitleSmartSolar"
             style="@style/TitleFragment"
             android:layout_marginStart="20dp"
-            android:text="Smart Solar" />
+            android:text="@string/tvTitleSmartSolarText" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

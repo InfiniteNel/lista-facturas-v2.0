@@ -10,10 +10,10 @@
         tools:context=".ui.view.listafacturas.ListaFacturasFragment">
 
         <TextView
-            android:id="@+id/tvTitleFactura"
+            android:id="@+id/tvTitleFacturaListaFacturas"
             style="@style/TitleFragment"
-            android:layout_marginStart="20dp"
-            android:text="Facturas"
+            android:layout_marginStart="@dimen/dimen_size_20"
+            android:text="@string/tvTitleFacturaListaFacturasText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,32 +21,32 @@
             android:id="@+id/rvListaFacturas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="@dimen/dimen_size_20"
+            android:layout_marginTop="@dimen/dimen_size_20"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleFactura"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleFacturaListaFacturas"
             tools:listitem="@layout/item_facturas" />
 
         <ProgressBar
             android:id="@+id/loading"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_size_300"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleFactura" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleFacturaListaFacturas" />
 
         <TextView
-            android:id="@+id/tvTitleNoData"
+            android:id="@+id/tvTitleNoDataListaFacturas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="No se encontraron facturas"
+            android:text="@string/tvTitleNoDataListaFacturasText"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleFactura"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleFacturaListaFacturas"
             app:layout_constraintVertical_bias="0.10" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

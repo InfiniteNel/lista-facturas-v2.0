@@ -1,6 +1,10 @@
 package com.jroslar.listafacturasv02.ui.view.listafacturas
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import androidx.annotation.NonNull
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -25,6 +29,7 @@ class ListaFacturasActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val topLevelDestination: MutableSet<Int> = HashSet()
+        topLevelDestination.add(R.id.ListaFacturasFragment)
         topLevelDestination.add(R.id.filtrarFacturasFragment)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -32,18 +37,20 @@ class ListaFacturasActivity : AppCompatActivity() {
             AppBarConfiguration.Builder(topLevelDestination).build()
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        val upArrow = resources.getDrawable(R.drawable.baseline_arrow_back_ios_24, theme)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            binding.toolbar.navigationIcon = upArrow
             when(destination.id) {
                 R.id.filtrarFacturasFragment -> {
-                    binding.toolbar.navigationIcon = null
+                    binding.toolbarDetalleBack.visibility = View.INVISIBLE
                 }
                 R.id.ListaFacturasFragment -> {
-                    binding.toolbar.navigationIcon = upArrow
+                    binding.toolbarDetalleBack.visibility = View.VISIBLE
                 }
             }
+        }
+
+        binding.toolbarDetalleBack.setOnClickListener {
+            finish()
         }
     }
 

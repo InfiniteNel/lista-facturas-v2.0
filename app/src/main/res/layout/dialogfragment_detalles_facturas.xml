@@ -5,40 +5,40 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tvInformacion"
+        android:id="@+id/tvInformacionDetallesFacturas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Información"
+        android:layout_marginTop="@dimen/dimen_size_24"
+        android:text="@string/tvInformacionDetallesFacturasText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvNoFuncional"
+        android:id="@+id/tvNoFuncionalDetallesFacturas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="Esta funcionalidad aún no está disponible"
+        android:layout_marginStart="@dimen/dimen_size_16"
+        android:layout_marginTop="@dimen/dimen_size_24"
+        android:layout_marginEnd="@dimen/dimen_size_16"
+        android:text="@string/tvNoFuncionalDetallesFacturasText"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInformacion" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInformacionDetallesFacturas" />
 
     <Button
-        android:id="@+id/vtCerrarPopUp"
+        android:id="@+id/btCerrarPopUpDetallesFacturas"
         style="@style/botones_primarios"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="Cerrar"
+        android:layout_marginTop="@dimen/dimen_size_24"
+        android:layout_marginBottom="@dimen/dimen_size_24"
+        android:text="@string/btCerrarPopUpDetallesFacturasText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvInformacion"
-        app:layout_constraintStart_toStartOf="@+id/tvInformacion"
-        app:layout_constraintTop_toBottomOf="@+id/tvNoFuncional" />
+        app:layout_constraintEnd_toEndOf="@+id/tvInformacionDetallesFacturas"
+        app:layout_constraintStart_toStartOf="@+id/tvInformacionDetallesFacturas"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoFuncionalDetallesFacturas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

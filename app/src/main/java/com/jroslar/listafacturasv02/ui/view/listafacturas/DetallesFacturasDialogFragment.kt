@@ -26,7 +26,7 @@ class DetallesFacturasDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.vtCerrarPopUp.setOnClickListener {
+        binding.btCerrarPopUpDetallesFacturas.setOnClickListener {
             dismiss()
         }
     }

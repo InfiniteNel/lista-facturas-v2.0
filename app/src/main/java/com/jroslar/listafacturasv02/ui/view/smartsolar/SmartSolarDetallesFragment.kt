@@ -40,11 +40,11 @@ class SmartSolarDetallesFragment : Fragment() {
         }
 
         viewModel._state.observe(viewLifecycleOwner, Observer {
-            binding.tietCAU.setText(it.cau)
-            binding.tietEstadoAutoconsumidor.setText(it.estadoSolicitudAutoConsumidor)
-            binding.tietCompensacion.setText(it.compensacionExcedentes)
-            binding.tietTipoConsumo.setText(it.tipoAutoConsumo)
-            binding.tietPotenciaInstalacion.setText(it.potenciaInstalacion)
+            binding.tietCAUSmaerSolar.setText(it.cau)
+            binding.tietEstadoAutoconsumidorSmartSolar.setText(it.estadoSolicitudAutoConsumidor)
+            binding.tietCompensacionSmartSolar.setText(it.compensacionExcedentes)
+            binding.tietTipoConsumoSmartSolar.setText(it.tipoAutoConsumo)
+            binding.tietPotenciaInstalacionSmartSolar.setText(it.potenciaInstalacion)
         })
     }
 
