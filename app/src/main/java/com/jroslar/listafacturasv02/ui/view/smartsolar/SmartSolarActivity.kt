@@ -23,11 +23,6 @@ class SmartSolarActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        /*supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val upArrow = resources.getDrawable(R.drawable.baseline_arrow_back_ios_24, theme)
-        supportActionBar?.setHomeAsUpIndicator(upArrow)*/
-
-        //binding.toolbar.contentInsetStartWithNavigation = 0
 
         binding.toolbarDetalleBack.setOnClickListener {
             finish()
@@ -39,14 +34,4 @@ class SmartSolarActivity : AppCompatActivity() {
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
     }
-
-    /*override fun onOptionsItemSelected(@NonNull item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
 }

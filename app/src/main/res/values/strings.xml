@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Lista facturas V.0.2</string>
+    <string name="tvTitlePracticasAndroidText">Prácticas Android</string>
 
     <!-- Fragment Filtrar Lista -->
     <string name="filtrar_facturas_fragment_label">Filtrar facturas</string>
@@ -53,6 +54,4 @@
 
     <!-- Fragmetn Samrt Solar Energia-->
     <string name="tvInfoTextEnergiaSmartSolarText">Estamos trabajando en mejorar la App. Tu paneles solares siguen produciendo en breve podrás seguir viendo tu producción solar. Sentimos las molestias.</string>
-
-
 </resources>

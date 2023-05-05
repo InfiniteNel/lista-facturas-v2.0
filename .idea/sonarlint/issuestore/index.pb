@@ -25,10 +25,6 @@ Japp/src/main/java/com/jroslar/listafacturasv02/data/model/FacturasModel.kt,3\0
 Tapp/src/main/java/com/jroslar/listafacturasv02/data/network/model/FacturaResponse.kt,7\1\71cafedd8bbb6d2810587f34ff90a57889e34ab5
 …
 Uapp/src/main/java/com/jroslar/listafacturasv02/data/network/model/FacturasResponse.kt,5\5\5582838e295244580b9fbe75fdace2c16b31ad41
-Ž
-^app/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarEnergiaFragment.kt,2\f\2fbc8165aa80ba8426ced92b1cd1f319ac92742e
-”
-dapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarMiInstalacionFragment.kt,2\a\2ace9a0401b4b145987081075d89761fc32aa158
 …
 Uapp/src/main/java/com/jroslar/listafacturasv02/data/network/model/DetallesResponse.kt,5\2\52d97081284080ae1fb6ab37554d686a5421d087
 
@@ -41,12 +37,6 @@ v
 Fapp/src/main/java/com/jroslar/listafacturasv02/ui/DashBoardActivity.kt,2\2\22eaab6f44deb40e9dc26519527cdb8b9b46d232
 ‰
 Yapp/src/main/java/com/jroslar/listafacturasv02/data/network/retrofit/FacturasApiClient.kt,0\2\02dd25666b0c1c402f004945560fd12dd015dcd3
-“
-capp/src/main/java/com/jroslar/listafacturasv02/data/network/retrofit/DetallesSmartSolarApiClient.kt,4\e\4e86d8a90a873ae1e4c56ebfe3bb73907d4369b5
-q
-Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
-‚
-Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetDetallesFromApiUseCase.kt,7\4\74ae2a2b8dca60553c589977e2eee1bdd9c00163
 t
 Dapp/src/main/java/com/jroslar/listafacturasv02/di/ViewmodulModule.kt,b\f\bffa0e2c58618810eecf2827ee26935374c673eb
 q
