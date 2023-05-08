@@ -23,6 +23,7 @@
 
     <TextView
         android:id="@+id/tvInfoTextMiInstalacionSmartSolar"
+        style="@style/NormalTextFragment"
         android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/GlobalMarginSideSmartSolar"
@@ -33,6 +34,7 @@
 
     <TextView
         android:id="@+id/tvAutoconsumoMiInstalacionSmartSolar"
+        style="@style/NormalTextFragment"
         android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_40"
@@ -43,6 +45,7 @@
 
     <TextView
         android:id="@+id/tvAutoConsumoValueMiInstalacionSmartSolar"
+        style="@style/NormalTextFragment"
         android:layout_width="@dimen/dimen_size_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_40"

@@ -32,6 +32,7 @@
 
             <TextView
                 android:id="@+id/tvTitleFechaFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_size_20"
@@ -43,6 +44,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btFechaDesdeFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dimen_size_40"
                 android:layout_marginTop="@dimen/dimen_size_6"
@@ -56,6 +58,7 @@
 
             <TextView
                 android:id="@+id/tvFechaDesdeFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_size_16"
@@ -66,6 +69,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btFechaHastaFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dimen_size_40"
                 android:layout_marginStart="@dimen/dimen_size_16"
@@ -80,6 +84,7 @@
 
             <TextView
                 android:id="@+id/tvFechaHastaFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_size_16"
@@ -115,6 +120,7 @@
 
             <TextView
                 android:id="@+id/tvTitleImporteFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
@@ -139,6 +145,7 @@
 
             <TextView
                 android:id="@+id/tvTitleEstadoFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/GlobalMarginTopFiltrarFacturas"
@@ -150,6 +157,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chPagadoFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
@@ -159,6 +167,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chAnuladasFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
@@ -168,6 +177,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chCuotaFijaFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
@@ -177,6 +187,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chPedientesDePagoFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
@@ -186,6 +197,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chPlanDePagoFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
@@ -195,6 +207,7 @@
 
             <TextView
                 android:id="@+id/tvMinImporteFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_size_8"
@@ -203,6 +216,7 @@
 
             <TextView
                 android:id="@+id/tvMaxImporteFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_size_8"
@@ -211,6 +225,7 @@
 
             <TextView
                 android:id="@+id/tvRankImporteFiltrarFactura"
+                style="@style/NormalTextFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_size_4"

@@ -7,34 +7,34 @@
 
     <TextView
         android:id="@+id/tvFacturaFecha"
+        style="@style/SubTitleItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_12"
         tools:text="31 Ago 2020"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvFacturaTipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvFacturaTipo"
+        style="@style/CommentTextItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dimen_size_12"
         tools:text="Pediente de pago"
-        android:textColor="@color/red"
-        android:textSize="16sp"
+        tools:textColor="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvFacturaPrecio"
+        style="@style/NormalTextItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_size_12"
         android:gravity="center_vertical"
         tools:text="54,56€"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivbArrow"
         app:layout_constraintTop_toTopOf="parent" />
