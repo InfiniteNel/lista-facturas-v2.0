@@ -95,6 +95,9 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
                 ListaFacturasViewModel.ListaFacturasResult.API_NO_DATA -> {
                     showNoData()
                 }
+                else -> {
+                    showNoData()
+                }
             }
         })
 

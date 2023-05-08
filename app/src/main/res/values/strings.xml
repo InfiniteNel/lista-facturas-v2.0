@@ -14,7 +14,6 @@
     <string name="tvTitleFiltrarFacturaText">Filtrar Facturas</string>
     <string name="btAplicarFiltroFiltrarFacturaText">Aplicar filtros</string>
     <string name="btEliminarFiltroFiltrarFacturaText">Eliminar filtros</string>
-    <string name="tvRankImporteFiltrarFacturaText">0€  -  0€</string>
     <string name="chPlanDePagoFiltrarFacturaText">Plan de pago</string>
     <string name="chPedientesDePagoFiltrarFacturaText">Pedientes de pago</string>
     <string name="chCuotaFijaFiltrarFacturaText">Cuota Fija</string>
