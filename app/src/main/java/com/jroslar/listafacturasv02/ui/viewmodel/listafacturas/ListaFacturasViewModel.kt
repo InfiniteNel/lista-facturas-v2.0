@@ -33,13 +33,13 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
             _data.postValue(emptyList())
             if (checkForInternet(context)) {
                 val data: List<FacturaModel> = getFacturasUseCase()
-                if (!data.isNullOrEmpty()) {
+                if (data.isNullOrEmpty()) {
+                    _state.postValue(ListaFacturasResult.API_NO_DATA)
+                    _maxValueImporte.postValue(0F)
+                } else {
                     _data.postValue(data)
                     _state.postValue(ListaFacturasResult.DATA)
                     _maxValueImporte.postValue(data.sortedBy { it.importeOrdenacion }[data.size - 1].importeOrdenacion)
-                } else {
-                    _state.postValue(ListaFacturasResult.API_NO_DATA)
-                    _maxValueImporte.postValue(0F)
                 }
             } else _state.postValue(ListaFacturasResult.NO_DATA)
         }
@@ -66,12 +66,12 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
     }
 
     fun getList(data: List<FacturaModel>) {
-        if (!data.isNullOrEmpty()) {
-            _data.postValue(data)
-            _state.postValue(ListaFacturasResult.DATA)
-        } else {
+        if (data.isNullOrEmpty()) {
             _data.postValue(emptyList())
             _state.postValue(ListaFacturasResult.NO_DATA)
+        } else {
+            _data.postValue(data)
+            _state.postValue(ListaFacturasResult.DATA)
         }
     }
 

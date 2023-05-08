@@ -10,8 +10,6 @@ class Constantes {
 
         const val URL_OBJECT_DETALLES = "facturas"
 
-        const val MONEDA_VALUE = "€"
-
         enum class DescEstado(val descEstado: String) {
             PedienteDePago("Pendiente de pago"),
             Pagada("Pagada"),

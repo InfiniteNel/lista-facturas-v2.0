@@ -1,6 +1,5 @@
 package com.jroslar.listafacturasv02.ui.viewmodel.listafacturas
 
-import android.content.Context
 import android.os.Build
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +11,7 @@ import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class FiltrarFacturasViewModel constructor(private val context: Context): ViewModel() {
+class FiltrarFacturasViewModel : ViewModel() {
     var _state: MutableLiveData<List<FacturaModel>> = MutableLiveData()
 
     private object Injection: KoinComponent {
@@ -23,18 +22,16 @@ class FiltrarFacturasViewModel constructor(private val context: Context): ViewMo
     fun getList() {
         viewModelScope.launch {
             val data: List<FacturaModel> = getFacturasLocalUseCase()
-            if (!data.isNullOrEmpty()) {
-                _state.value = data
-            } else {
+            if (data.isNullOrEmpty()) {
                 _state.value = emptyList()
+            } else {
+                _state.value = data
             }
         }
     }
 
     fun filterListByCheckBox(value: List<String>) {
-        if (!value.isNullOrEmpty()) {
-            _state.value = _state.value?.filter { value.contains(it.descEstado) }
-        }
+        if (!value.isNullOrEmpty()) { _state.value = _state.value?.filter { value.contains(it.descEstado) } }
     }
 
     fun filterListByImporte(value: Int) {

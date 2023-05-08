@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Lista facturas V.0.2</string>
     <string name="tvTitlePracticasAndroidText">Prácticas Android</string>
+    <string name="monedaValue">€</string>
 
     <!-- Fragment Filtrar Lista -->
     <string name="filtrar_facturas_fragment_label">Filtrar facturas</string>

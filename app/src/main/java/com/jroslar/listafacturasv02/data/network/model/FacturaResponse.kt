@@ -6,9 +6,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class FacturaResponse (
-    @SerializedName("descEstado") val descEstado: String,
-    @SerializedName("importeOrdenacion") val importeOrdenacion: Float,
-    @SerializedName("fecha") val fecha: String
+    val descEstado: String,
+    val importeOrdenacion: Float,
+    val fecha: String
 )
 
 fun FacturaResponse.toModelFactura(): FacturaModel = FacturaModel(descEstado, importeOrdenacion, fecha)

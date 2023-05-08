@@ -1,12 +1,9 @@
 package com.jroslar.listafacturasv02.ui.view.smartsolar
 
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.data.adapter.SmartSolarSectionsPagerAdapter
 import com.jroslar.listafacturasv02.databinding.ActivitySmartSolarBinding
 

@@ -2,11 +2,9 @@ package com.jroslar.listafacturasv02.ui.view.listafacturas
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.core.view.isVisible
 import androidx.fragment.app.setFragmentResultListener
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +20,8 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
 
     private var _binding: FragmentListaFacturasBinding? = null
     private val binding get() = _binding!!
-    private val adapter = ListaFacturasAdapter(this)
+    private var _adapter: ListaFacturasAdapter? = null
+    private val adapter get() = _adapter!!
     private var _viewModel: ListaFacturasViewModel? = null
     private val viewModel get() = _viewModel!!
 
@@ -71,6 +70,7 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
         super.onViewCreated(view, savedInstanceState)
 
         _viewModel = getViewModel()
+        _adapter = ListaFacturasAdapter(this, requireContext())
 
         intiAdapter()
 

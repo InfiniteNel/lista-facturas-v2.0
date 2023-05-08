@@ -25,12 +25,6 @@ class FacturasService constructor(private val retrofit: Retrofit, private val re
             StateServer.Ktor -> {
                 try {
                     client.get { url(URL_SERVIDOR_FACTURAS)}
-                } catch (e: RedirectResponseException) {
-                    noData()
-                } catch (e: ClientRequestException) {
-                    noData()
-                } catch (e: ServerResponseException) {
-                    noData()
                 } catch (e: Exception) {
                     noData()
                 }

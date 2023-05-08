@@ -1,10 +1,7 @@
 package com.jroslar.listafacturasv02.ui.view.listafacturas
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
-import androidx.annotation.NonNull
-import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -45,6 +42,9 @@ class ListaFacturasActivity : AppCompatActivity() {
                 }
                 R.id.ListaFacturasFragment -> {
                     binding.toolbarDetalleBack.visibility = View.VISIBLE
+                }
+                else -> {
+                    //
                 }
             }
         }

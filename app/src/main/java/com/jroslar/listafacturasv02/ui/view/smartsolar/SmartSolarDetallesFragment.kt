@@ -6,11 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.databinding.FragmentSmartSolarDetallesBinding
-import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.smartsolar.SmartSolarDetallesViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 

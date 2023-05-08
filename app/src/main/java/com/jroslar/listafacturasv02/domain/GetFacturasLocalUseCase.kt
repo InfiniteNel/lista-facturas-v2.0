@@ -9,7 +9,6 @@ class GetFacturasLocalUseCase constructor(
     suspend operator fun invoke(): List<FacturaModel> {
         val facturas = repository.getAllFacturasLocal()
 
-        return if (facturas.isNotEmpty()) facturas
-            else emptyList()
+        return facturas.ifEmpty { emptyList() }
     }
 }

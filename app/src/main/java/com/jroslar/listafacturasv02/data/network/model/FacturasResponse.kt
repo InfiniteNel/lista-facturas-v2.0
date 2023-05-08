@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class FacturasResponse (
-    @SerializedName("numFacturas") val numFacturas: Int,
-    @SerializedName("facturas") val facturas: List<FacturaResponse>
+    val numFacturas: Int,
+    val facturas: List<FacturaResponse>
 )
