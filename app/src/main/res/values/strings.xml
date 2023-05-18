@@ -22,7 +22,7 @@
 
     <!-- Fragment Lista Facturas -->
     <string name="lista_facturas_fragment_label">Facturas</string>
-    <string name="toolbarDetalleBackTextListaFacturas">Consumo</string>
+    <string name="toolbarDetalleBackTextListaFacturas">Atrás</string>
     <string name="tvInformacionDetallesFacturasText">Información</string>
     <string name="tvNoFuncionalDetallesFacturasText">Esta funcionalidad aún no está disponible</string>
     <string name="btCerrarPopUpDetallesFacturasText">Cerrar</string>

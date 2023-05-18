@@ -67,6 +67,5 @@
         <item name="android:textAlignment">textStart</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/green_500</item>
-        <item name="android:drawableLeft">@drawable/baseline_keyboard_arrow_left_24</item>
     </style>
 </resources>

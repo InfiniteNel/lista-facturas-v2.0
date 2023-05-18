@@ -30,6 +30,9 @@
                     style="@style/toolbar_detalle_button_back"
                     android:layout_gravity="center_vertical"
                     android:text="@string/toolbarDetalleBackText"
+                    app:icon="@drawable/baseline_keyboard_arrow_left_24"
+                    app:iconPadding="0dp"
+                    app:iconTint="@color/green_500"
                     tools:ignore="TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>

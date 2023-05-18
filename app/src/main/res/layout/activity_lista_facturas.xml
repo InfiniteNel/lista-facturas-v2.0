@@ -30,8 +30,11 @@
                     android:id="@+id/toolbarDetalleBack"
                     style="@style/toolbar_detalle_button_back"
                     android:layout_gravity="center_vertical"
-                    tools:ignore="TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck"
-                    android:text="@string/toolbarDetalleBackTextListaFacturas" />
+                    android:text="@string/toolbarDetalleBackTextListaFacturas"
+                    app:icon="@drawable/baseline_keyboard_arrow_left_24"
+                    app:iconPadding="0dp"
+                    app:iconTint="@color/green_500"
+                    tools:ignore="TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
