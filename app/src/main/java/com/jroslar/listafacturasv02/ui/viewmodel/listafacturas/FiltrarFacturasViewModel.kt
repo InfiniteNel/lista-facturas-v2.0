@@ -13,6 +13,9 @@ import org.koin.core.component.inject
 
 class FiltrarFacturasViewModel : ViewModel() {
     var _state: MutableLiveData<List<FacturaModel>> = MutableLiveData()
+    var _valueFiltroImporte: MutableLiveData<Int> = MutableLiveData()
+    var _valueFiltroFechaDesde: MutableLiveData<String> = MutableLiveData()
+    var _valueFiltroFechahasta: MutableLiveData<String> = MutableLiveData()
 
     private object Injection: KoinComponent {
         val getFacturasLocalUseCase by inject<GetFacturasLocalUseCase>()
@@ -34,19 +37,31 @@ class FiltrarFacturasViewModel : ViewModel() {
         if (!value.isNullOrEmpty()) { _state.value = _state.value?.filter { value.contains(it.descEstado) } }
     }
 
-    fun filterListByImporte(value: Int) {
-        _state.value = _state.value?.filter { it.importeOrdenacion < value }
+    fun filterListByImporte() {
+        _state.value = _state.value?.filter { it.importeOrdenacion < _valueFiltroImporte.value!! }
     }
 
-    fun filterlistByFechaDesde(value: String) {
+    private fun filterlistByFechaDesde(value: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _state.value = _state.value?.filter { value.castStringToDate().isBefore(it.fecha.castStringToDate())}
         }
     }
 
-    fun filterlistByFechaHasta(value: String) {
+    private fun filterlistByFechaHasta(value: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _state.value = _state.value?.filter { value.castStringToDate().isAfter(it.fecha.castStringToDate())}
+        }
+    }
+
+    fun comprobarFechas() {
+        var text = _valueFiltroFechaDesde.value
+        val regex = "\\d{1,2} [A-Z a-z]{3} \\d{4}".toRegex()
+        if (text != null && regex.matches(text)) {
+            filterlistByFechaDesde(text.toString())
+        }
+        text = _valueFiltroFechahasta.value
+        if (text != null && regex.matches(text)) {
+            filterlistByFechaHasta(text.toString())
         }
     }
 }

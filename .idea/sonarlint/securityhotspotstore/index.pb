@@ -7,10 +7,6 @@ A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-
-Oapp/src/test/java/com/jroslar/listafacturasv02/GetDetallesFromApiUseCaseTest.kt,d\b\db1db472c85ae0c5f057e395695fbbc56b499e71
-
-Oapp/src/test/java/com/jroslar/listafacturasv02/GetFacturasFromApiUseCaseTest.kt,c\2\c28e7e69b357a377d36ceec2bc4173e21ec79503
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 }
@@ -57,12 +53,6 @@ q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Extensions.kt,3\e\3e8c67aa678af6439bff6e7586c5271fd10af519
-ç
-]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasActivity.kt,a\3\a38c5d4a92ea02b29f7b0a680bb75ce78fc80816
-ç
-]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasFragment.kt,8\8\88207bb67240628147e2f00452060ce34fa3bf83
-ì
-capp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/listafacturas/ListaFacturasViewModel.kt,4\3\433a250ffbcf217ff72b0c664ea1eb2ac60332fe
 ç
 ]app/src/main/java/com/jroslar/listafacturasv02/data/adapter/SmartSolarSectionsPagerAdapter.kt,a\c\ac30dac8117b5d2b607b05231ff4ee10f3c907f5
 

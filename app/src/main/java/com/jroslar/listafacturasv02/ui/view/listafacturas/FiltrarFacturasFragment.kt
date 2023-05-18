@@ -4,10 +4,11 @@ import android.app.DatePickerDialog
 import android.os.Build
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import android.widget.SeekBar
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.setFragmentResult
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
@@ -63,6 +64,7 @@ class FiltrarFacturasFragment : Fragment() {
         return binding.root
 
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _viewModel = getViewModel()
@@ -70,12 +72,26 @@ class FiltrarFacturasFragment : Fragment() {
 
         viewModel.getList()
 
+        viewModel._valueFiltroImporte.observe(viewLifecycleOwner) {
+            binding.sbImporteFiltrarFactura.progress = it
+            binding.tvRankImporteFiltrarFactura.text = "${binding.sbImporteFiltrarFactura.min}$moneda  -  $it$moneda"
+        }
+
+        viewModel._valueFiltroFechaDesde.observe(viewLifecycleOwner) {
+            binding.btFechaDesdeFiltrarFactura.text = it
+        }
+
+        viewModel._valueFiltroFechahasta.observe(viewLifecycleOwner) {
+            binding.btFechaHastaFiltrarFactura.text = it
+        }
+
         val bundle = arguments
-        if (bundle!=null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (bundle != null) {
             val maxImporte = floor(bundle.getFloat(MAX_IMPORTE).toDouble()).toInt() + 1
             binding.sbImporteFiltrarFactura.max = maxImporte
-            binding.sbImporteFiltrarFactura.progress = maxImporte
-            binding.tvRankImporteFiltrarFactura.text = "${binding.sbImporteFiltrarFactura.min}$moneda  -  ${binding.sbImporteFiltrarFactura.progress}$moneda"
+
+            if (viewModel._valueFiltroImporte.value == null) viewModel._valueFiltroImporte.value = maxImporte
+
             binding.tvMaxImporteFiltrarFactura.text = "$maxImporte$moneda"
             binding.tvMinImporteFiltrarFactura.text = "0$moneda"
 
@@ -83,7 +99,8 @@ class FiltrarFacturasFragment : Fragment() {
                 SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(seek: SeekBar,
                                                progress: Int, fromUser: Boolean) {
-                    binding.tvRankImporteFiltrarFactura.text = "${binding.sbImporteFiltrarFactura.min}$moneda  -  ${binding.sbImporteFiltrarFactura.progress}$moneda"
+
+                    viewModel._valueFiltroImporte.value = progress
                 }
 
                 override fun onStartTrackingTouch(seek: SeekBar) {
@@ -97,11 +114,11 @@ class FiltrarFacturasFragment : Fragment() {
         }
 
         binding.btFechaDesdeFiltrarFactura.setOnClickListener {
-            showDatePicker(binding.btFechaDesdeFiltrarFactura)
+            showDatePicker(viewModel._valueFiltroFechaDesde)
         }
 
         binding.btFechaHastaFiltrarFactura.setOnClickListener {
-            showDatePicker(binding.btFechaHastaFiltrarFactura)
+            showDatePicker(viewModel._valueFiltroFechahasta)
         }
 
         binding.btEliminarFiltroFiltrarFactura.setOnClickListener {
@@ -110,17 +127,17 @@ class FiltrarFacturasFragment : Fragment() {
 
         binding.btAplicarFiltroFiltrarFactura.setOnClickListener{
             comprobarCheckBoxs()
-            comprobarFechas()
-            viewModel.filterListByImporte(binding.sbImporteFiltrarFactura.progress)
+            viewModel.comprobarFechas()
+            viewModel.filterListByImporte()
 
-            var bundle = Bundle()
-            bundle.putParcelable(DATA_FILTER, FacturasModel(viewModel._state.value!!.size, viewModel._state.value!!))
-            setFragmentResult(DATA_FILTER, bundle)
+            val bundleToListaFactura = Bundle()
+            bundleToListaFactura.putParcelable(DATA_FILTER, FacturasModel(viewModel._state.value!!.size, viewModel._state.value!!))
+            setFragmentResult(DATA_FILTER, bundleToListaFactura)
             findNavController().navigateUp()
         }
     }
 
-    private fun showDatePicker(button: Button) {
+    private fun showDatePicker(_valueFiltroFecha: MutableLiveData<String>) {
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
@@ -129,27 +146,15 @@ class FiltrarFacturasFragment : Fragment() {
         val dpdFecha = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val newdf: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale("es"))
-                button.text = "$dayOfMonth/${monthOfYear+1}/$year".castStringToDate().format(newdf)
+                _valueFiltroFecha.value = "$dayOfMonth/${monthOfYear+1}/$year".castStringToDate().format(newdf)
             }
         }, year, month, day)
         dpdFecha.datePicker.maxDate = Date().time
         dpdFecha.show()
     }
 
-    private fun comprobarFechas() {
-        var text = binding.btFechaDesdeFiltrarFactura.text
-        val regex = "\\d{1,2} [A-Z a-z]{3} \\d{4}".toRegex()
-        if (text != null && regex.matches(text)) {
-            viewModel.filterlistByFechaDesde(text.toString())
-        }
-        text = binding.btFechaHastaFiltrarFactura.text
-        if (text != null && regex.matches(text)) {
-            viewModel.filterlistByFechaHasta(text.toString())
-        }
-    }
-
     private fun comprobarCheckBoxs() {
-        var checks = mutableListOf<String>()
+        val checks = mutableListOf<String>()
         if (binding.chAnuladasFiltrarFactura.isChecked) {
             checks.add(DescEstado.Anuladas.descEstado)
         }
@@ -176,11 +181,9 @@ class FiltrarFacturasFragment : Fragment() {
         binding.chPagadoFiltrarFactura.isChecked = false
         binding.chPlanDePagoFiltrarFactura.isChecked = false
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            binding.sbImporteFiltrarFactura.progress = binding.sbImporteFiltrarFactura.max
-        }
+        viewModel._valueFiltroImporte.value = binding.sbImporteFiltrarFactura.max
 
-        binding.btFechaDesdeFiltrarFactura.text = null
-        binding.btFechaHastaFiltrarFactura.text = null
+        viewModel._valueFiltroFechahasta.value = null
+        viewModel._valueFiltroFechaDesde.value = null
     }
 }
