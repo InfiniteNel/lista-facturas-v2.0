@@ -25,7 +25,7 @@ class FiltrarFacturasViewModel : ViewModel() {
     fun getList() {
         viewModelScope.launch {
             val data: List<FacturaModel> = getFacturasLocalUseCase()
-            if (data.isNullOrEmpty()) {
+            if (data.isEmpty()) {
                 _state.value = emptyList()
             } else {
                 _state.value = data
@@ -34,7 +34,7 @@ class FiltrarFacturasViewModel : ViewModel() {
     }
 
     fun filterListByCheckBox(value: List<String>) {
-        if (!value.isNullOrEmpty()) { _state.value = _state.value?.filter { value.contains(it.descEstado) } }
+        if (value.isNotEmpty()) { _state.value = _state.value?.filter { value.contains(it.descEstado) } }
     }
 
     fun filterListByImporte() {

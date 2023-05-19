@@ -1,11 +1,13 @@
 package com.jroslar.listafacturasv02.ui.view.listafacturas
 
+import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.core.view.isVisible
 import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.Observer
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jroslar.listafacturasv02.R
@@ -16,7 +18,7 @@ import com.jroslar.listafacturasv02.databinding.FragmentListaFacturasBinding
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
+class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura, MenuProvider {
 
     private var _binding: FragmentListaFacturasBinding? = null
     private val binding get() = _binding!!
@@ -30,19 +32,12 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
         const val DATA_FILTER: String = "data_filter"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_main, menu)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_main, menu)
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
             R.id.filtrarFacturas -> {
                 if (viewModel._state.value != ListaFacturasViewModel.ListaFacturasResult.API_NO_DATA
                     || viewModel._state.value != ListaFacturasViewModel.ListaFacturasResult.LOADING) {
@@ -50,16 +45,16 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
                     bundle.putFloat(MAX_IMPORTE, viewModel._maxValueImporte.value?: 0F)
                     findNavController().navigate(R.id.action_ListaFacturasFragment_to_filtrarFacturasFragment, bundle)
                 }
-                return true
+                true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> true
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentListaFacturasBinding.inflate(inflater, container, false)
         return binding.root
@@ -69,18 +64,20 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
         _viewModel = getViewModel()
         _adapter = ListaFacturasAdapter(this, requireContext())
 
         intiAdapter()
 
-        viewModel._data.observe(viewLifecycleOwner, Observer {
+        viewModel._data.observe(viewLifecycleOwner) {
             adapter.listaFacturas = it
             adapter.notifyDataSetChanged()
-        })
+        }
 
-        viewModel._state.observe(viewLifecycleOwner, Observer {
-            when(it) {
+        viewModel._state.observe(viewLifecycleOwner) {
+            when (it) {
                 ListaFacturasViewModel.ListaFacturasResult.LOADING -> {
                     binding.loading.isVisible = true
                     binding.tvTitleNoDataListaFacturas.isVisible = false
@@ -99,11 +96,15 @@ class ListaFacturasFragment : Fragment(), ListaFacturasAdapter.OnManageFactura {
                     showNoData()
                 }
             }
-        })
+        }
 
         setFragmentResultListener(DATA_FILTER) { reqKey, bundle ->
             if (reqKey == DATA_FILTER) {
-                val value: FacturasModel = bundle.getParcelable(DATA_FILTER)!!
+                val value: FacturasModel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    bundle.getParcelable(DATA_FILTER, FacturasModel::class.java)!!
+                } else {
+                    @Suppress("DEPRECATION") bundle.getParcelable(DATA_FILTER)!!
+                }
                 viewModel.getList(value.facturas)
             }
         }

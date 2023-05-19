@@ -16,6 +16,7 @@ import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.http.*
+import kotlinx.coroutines.Dispatchers
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -56,6 +57,9 @@ val dataModule = module {
                 acceptContentTypes = acceptContentTypes + ContentType.Any
             }
         }
+    }
+    single {
+        Dispatchers.IO
     }
 
     factory { FacturasService(get(named(Qualifier.FacturasRetrofit)), get(named(Qualifier.FacturasRetromock)), get()) }

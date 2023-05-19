@@ -3,9 +3,11 @@ package com.jroslar.listafacturasv02.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Constantes.Companion.StateServer
@@ -15,7 +17,7 @@ import com.jroslar.listafacturasv02.databinding.ActivityDashboardBinding
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasActivity
 import com.jroslar.listafacturasv02.ui.view.smartsolar.SmartSolarActivity
 
-class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica {
+class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica, MenuProvider {
     private lateinit var binding: ActivityDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,16 +31,17 @@ class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica
         //Quitar Titulo de la Toolbar
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        addMenuProvider(this)
+
         intiAdapter()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menuInflater.inflate(R.menu.menu_dashboard, menu)
-        return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
             R.id.changeKtor -> {
                 stateServer = StateServer.Ktor
                 Toast.makeText(this, "Ktor", Toast.LENGTH_SHORT).show()
@@ -54,7 +57,7 @@ class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica
                 Toast.makeText(this, "Retromock", Toast.LENGTH_SHORT).show()
                 true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> true
         }
     }
 
@@ -64,9 +67,10 @@ class DashBoardActivity : AppCompatActivity(), AdapterPracticas.OnManagePractica
     }
 
     override fun onClickPractica(practica: AdapterPracticas.Practica) {
-        when (practica.tipo) {
-            AdapterPracticas.PracticasName.PRACTICA1 -> startActivity(Intent(this, ListaFacturasActivity::class.java))
-            AdapterPracticas.PracticasName.PRACTICA2 -> startActivity(Intent(this, SmartSolarActivity::class.java))
+        if (practica.tipo == AdapterPracticas.PracticasName.PRACTICA1) {
+            startActivity(Intent(this, ListaFacturasActivity::class.java))
+        } else {
+            startActivity(Intent(this, SmartSolarActivity::class.java))
         }
     }
 }

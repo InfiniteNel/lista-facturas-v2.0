@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.jroslar.listafacturasv02.databinding.FragmentSmartSolarDetallesBinding
 import com.jroslar.listafacturasv02.ui.viewmodel.smartsolar.SmartSolarDetallesViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -20,7 +19,7 @@ class SmartSolarDetallesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentSmartSolarDetallesBinding.inflate(inflater, container, false)
         return binding.root
@@ -35,13 +34,13 @@ class SmartSolarDetallesFragment : Fragment() {
             SmartSolarSolicitudAutoconsumoDialogFragment.newInstance().show(parentFragmentManager, "")
         }
 
-        viewModel._state.observe(viewLifecycleOwner, Observer {
+        viewModel._state.observe(viewLifecycleOwner) {
             binding.tietCAUSmaerSolar.setText(it.cau)
             binding.tietEstadoAutoconsumidorSmartSolar.setText(it.estadoSolicitudAutoConsumidor)
             binding.tietCompensacionSmartSolar.setText(it.compensacionExcedentes)
             binding.tietTipoConsumoSmartSolar.setText(it.tipoAutoConsumo)
             binding.tietPotenciaInstalacionSmartSolar.setText(it.potenciaInstalacion)
-        })
+        }
     }
 
     companion object {

@@ -20,14 +20,14 @@ class Extensions {
                 val df: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
                 date = LocalDate.parse(validateDate(this), df)
             } else if ("\\d{1,2} [A-Z a-z]{3} \\d{4}".toRegex().matches(this)) {
-                val df: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale("es"))
+                val df: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale(Locale.getDefault().displayLanguage))
                 date = LocalDate.parse(this, df)
             }
             return date
         }
 
         private fun validateDate(value:String):String {
-            var list = value.split("/").toMutableList()
+            val list = value.split("/").toMutableList()
             if (list[0].toInt() < 10 && list[0].length < 2) {
                 list[0] = "0${list[0]}"
             }

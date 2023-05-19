@@ -16,7 +16,7 @@ class SmartSolarSolicitudAutoconsumoDialogFragment : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = DialogfragmentSmartSolarSolicitudAutoconsumoBinding.inflate(inflater, container, false)
         return binding.root

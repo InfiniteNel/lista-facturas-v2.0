@@ -1,12 +1,12 @@
 package com.jroslar.listafacturasv02.data.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
@@ -28,11 +28,12 @@ class ListaFacturasAdapter(private val listener: OnManageFactura, private val co
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemFacturasBinding.bind(itemView)
 
+        @SuppressLint("SetTextI18n")
         fun bind(factura: FacturaModel, listener: OnManageFactura, context: Context) {
-            var tipo = factura.descEstado
+            val tipo = factura.descEstado
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val newdf: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale("es"))
-                var fecha = factura.fecha.castStringToDate().format(newdf)
+                val fecha = factura.fecha.castStringToDate().format(newdf)
                 binding.tvFacturaFecha.text = fecha.substring(0,4).uppercase() + fecha.substring(4)
             } else binding.tvFacturaFecha.text = factura.fecha
 

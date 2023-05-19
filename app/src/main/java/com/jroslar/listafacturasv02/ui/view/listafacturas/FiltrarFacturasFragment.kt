@@ -1,5 +1,6 @@
 package com.jroslar.listafacturasv02.ui.view.listafacturas
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Build
 import android.os.Bundle
@@ -7,7 +8,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.SeekBar
 import androidx.annotation.RequiresApi
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.setFragmentResult
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.jroslar.listafacturasv02.R
@@ -25,7 +28,7 @@ import java.util.*
 import kotlin.math.floor
 
 
-class FiltrarFacturasFragment : Fragment() {
+class FiltrarFacturasFragment : Fragment(), MenuProvider {
 
     private var _binding: FragmentFiltrarFacturasBinding? = null
     private val binding get() = _binding!!
@@ -34,39 +37,36 @@ class FiltrarFacturasFragment : Fragment() {
     private var _moneda: String? = null
     private val moneda get() = _moneda!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_filtrar, menu)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_filtrar, menu)
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
             R.id.cerrarFiltrarFacturas -> {
                 findNavController().navigateUp()
-                return true
+                true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> true
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentFiltrarFacturasBinding.inflate(inflater, container, false)
         return binding.root
 
     }
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
         _viewModel = getViewModel()
         _moneda = R.string.monedaValue.getResourceStringAndroid(requireContext())
 
@@ -143,10 +143,10 @@ class FiltrarFacturasFragment : Fragment() {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        val dpdFecha = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
+        val dpdFecha = DatePickerDialog(requireContext(), { _, yearDatePicker, monthOfYearDatePicker, dayOfMonthDatePicker ->
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val newdf: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale("es"))
-                _valueFiltroFecha.value = "$dayOfMonth/${monthOfYear+1}/$year".castStringToDate().format(newdf)
+                val newdf: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale(Locale.getDefault().displayLanguage))
+                _valueFiltroFecha.value = "$dayOfMonthDatePicker/${monthOfYearDatePicker+1}/$yearDatePicker".castStringToDate().format(newdf)
             }
         }, year, month, day)
         dpdFecha.datePicker.maxDate = Date().time

@@ -8,11 +8,14 @@ import com.jroslar.listafacturasv02.data.model.toFacturaEntity
 import com.jroslar.listafacturasv02.data.network.FacturasService
 import com.jroslar.listafacturasv02.data.network.model.toModelFactura
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class FacturasRepository constructor(private val facturasService: FacturasService, private val context: Context) {
-    private val dispatcherIO: CoroutineDispatcher = Dispatchers.IO
+class FacturasRepository constructor(
+    private val facturasService: FacturasService,
+    private val context: Context,
+    private val dispatcherIO: CoroutineDispatcher
+    ) {
+
 
     suspend fun getAllFacturasFromApi(): List<FacturaModel> {
         return withContext(dispatcherIO) {
