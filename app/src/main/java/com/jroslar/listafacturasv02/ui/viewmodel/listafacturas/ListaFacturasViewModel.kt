@@ -40,7 +40,9 @@ class ListaFacturasViewModel constructor(private val context: Context): ViewMode
                     _state.postValue(ListaFacturasResult.DATA)
                     _maxValueImporte.postValue(data.sortedBy { it.importeOrdenacion }[data.size - 1].importeOrdenacion)
                 }
-            } else _state.postValue(ListaFacturasResult.NO_DATA)
+            } else {
+                _state.postValue(ListaFacturasResult.NO_DATA)
+            }
         }
     }
 

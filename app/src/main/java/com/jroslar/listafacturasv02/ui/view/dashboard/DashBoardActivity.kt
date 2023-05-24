@@ -1,4 +1,4 @@
-package com.jroslar.listafacturasv02.ui
+package com.jroslar.listafacturasv02.ui.view.dashboard
 
 import android.content.Intent
 import android.os.Bundle

@@ -90,7 +90,9 @@ class FiltrarFacturasFragment : Fragment(), MenuProvider {
             val maxImporte = floor(bundle.getFloat(MAX_IMPORTE).toDouble()).toInt() + 1
             binding.sbImporteFiltrarFactura.max = maxImporte
 
-            if (viewModel._valueFiltroImporte.value == null) viewModel._valueFiltroImporte.value = maxImporte
+            if (viewModel._valueFiltroImporte.value == null) {
+                viewModel._valueFiltroImporte.value = maxImporte
+            }
 
             binding.tvMaxImporteFiltrarFactura.text = "$maxImporte$moneda"
             binding.tvMinImporteFiltrarFactura.text = "0$moneda"

@@ -16,6 +16,7 @@ private val TAB_TITLES = arrayOf(
     R.string.tab_text_3,
 )
 
+@Suppress("DEPRECATION")
 class SmartSolarSectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
@@ -28,7 +29,7 @@ class SmartSolarSectionsPagerAdapter(private val context: Context, fm: FragmentM
         }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return TAB_TITLES[position].getResourceStringAndroid(context)
     }
 
