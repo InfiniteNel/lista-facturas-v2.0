@@ -68,4 +68,5 @@
     <!-- Activity Signup -->
     <string name="etSignupReptirContraseñaHint">Repetir Contraseña</string>
     <string name="btSignupRegistrarseText">Registrarse</string>
+    <string name="btSignupIniciarSesionText">Iniciar Sesión</string>
 </resources>

@@ -6,130 +6,130 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.login.SignupActivity">
 
-  <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/glLimiteIzquierdo"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintGuide_begin="@dimen/GlobalMarginSideSmartSolar" />
-
-  <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/glLimiteDerecho"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintGuide_end="@dimen/GlobalMarginSideSmartSolar" />
-
-  <ImageView
-      android:id="@+id/ivLoginIberdrola"
-      android:layout_width="0dp"
-      android:layout_height="@dimen/dimen_size_100"
-      android:layout_marginStart="@dimen/dimen_size_100"
-      android:layout_marginEnd="@dimen/dimen_size_100"
-      android:src="@drawable/ic_logo_iberdrola_cli"
-      android:contentDescription="@string/ivLoginIberdrolaContentDescription"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <EditText
-      android:id="@+id/etLoginUsuario"
-      style="@style/login_edit_text"
-      android:layout_marginTop="@dimen/dimen_size_150"
-      android:hint="@string/etLoginUsuarioHint"
-      android:inputType="textEmailAddress"
-      android:autofillHints="emailAddress"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/ivLoginIberdrola" />
-
-  <EditText
-      android:id="@+id/etLoginContraseña"
-      style="@style/login_edit_text"
-      android:layout_marginTop="@dimen/dimen_size_20"
-      android:drawableEnd="@drawable/ic_ojo"
-      android:hint="@string/etLoginContraseñaHint"
-      android:inputType="textPassword"
-      android:autofillHints="password"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/etLoginUsuario" />
-
-  <EditText
-      android:id="@+id/etSignupReptirContraseña"
-      style="@style/login_edit_text"
-      android:layout_marginTop="@dimen/dimen_size_20"
-      android:drawableEnd="@drawable/ic_ojo"
-      android:hint="@string/etSignupReptirContraseñaHint"
-      android:inputType="textPassword"
-      android:autofillHints="password"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/etLoginContraseña" />
-
-  <Button
-      android:id="@+id/btSignupRegistrarse"
-      style="@style/botones_primarios"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/dimen_size_150"
-      android:layout_marginStart="@dimen/dimen_size_40"
-      android:layout_marginEnd="@dimen/dimen_size_40"
-      android:text="@string/btSignupRegistrarseText"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/etSignupReptirContraseña" />
-
-  <Button
-      android:id="@+id/btSignupIniciarSesion"
-      style="@style/boton_login_registrate"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="@dimen/dimen_size_40"
-      android:layout_marginTop="@dimen/dimen_size_16"
-      android:layout_marginEnd="@dimen/dimen_size_40"
-      android:text="@string/btSignupIniciarSesionText"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/dvLoginTambien" />
-
-  <LinearLayout
-      android:id="@+id/dvLoginTambien"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/dimen_size_16"
-      android:orientation="horizontal"
-      app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-      app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-      app:layout_constraintTop_toBottomOf="@+id/btSignupRegistrarse">
-
-    <View
-        android:id="@+id/first_divider"
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:background="@color/grey" />
-
-    <TextView
-        android:id="@+id/dvSignupTambienPuede"
-        style="@style/NormalTextFragment"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteIzquierdo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/dvLoginTambienPuedeText"
-        android:textColor="@color/grey" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/GlobalMarginSideSmartSolar" />
 
-    <View
-        android:id="@+id/second_divider"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteDerecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/GlobalMarginSideSmartSolar" />
+
+    <ImageView
+        android:id="@+id/ivLoginIberdrola"
         android:layout_width="0dp"
-        android:layout_height="0.5dp"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:background="@color/grey" />
+        android:layout_height="@dimen/dimen_size_100"
+        android:layout_marginStart="@dimen/dimen_size_100"
+        android:layout_marginEnd="@dimen/dimen_size_100"
+        android:src="@drawable/ic_logo_iberdrola_cli"
+        android:contentDescription="@string/ivLoginIberdrolaContentDescription"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toTopOf="parent" />
 
-  </LinearLayout>
+    <EditText
+        android:id="@+id/etLoginUsuario"
+        style="@style/login_edit_text"
+        android:layout_marginTop="@dimen/dimen_size_150"
+        android:hint="@string/etLoginUsuarioHint"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/ivLoginIberdrola" />
+
+    <EditText
+        android:id="@+id/etLoginContraseña"
+        style="@style/login_edit_text"
+        android:layout_marginTop="@dimen/dimen_size_20"
+        android:drawableEnd="@drawable/ic_ojo"
+        android:hint="@string/etLoginContraseñaHint"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginUsuario" />
+
+    <EditText
+        android:id="@+id/etSignupReptirContraseña"
+        style="@style/login_edit_text"
+        android:layout_marginTop="@dimen/dimen_size_20"
+        android:drawableEnd="@drawable/ic_ojo"
+        android:hint="@string/etSignupReptirContraseñaHint"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginContraseña" />
+
+    <Button
+        android:id="@+id/btSignupRegistrarse"
+        style="@style/botones_primarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_size_150"
+        android:layout_marginStart="@dimen/dimen_size_40"
+        android:layout_marginEnd="@dimen/dimen_size_40"
+        android:text="@string/btSignupRegistrarseText"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/etSignupReptirContraseña" />
+
+    <Button
+        android:id="@+id/btSignupIniciarSesion"
+        style="@style/boton_login_registrate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_size_40"
+        android:layout_marginTop="@dimen/dimen_size_16"
+        android:layout_marginEnd="@dimen/dimen_size_40"
+        android:text="@string/btSignupIniciarSesionText"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/dvLoginTambien" />
+
+    <LinearLayout
+        android:id="@+id/dvLoginTambien"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_size_16"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/btSignupRegistrarse">
+
+        <View
+            android:id="@+id/first_divider"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/dvSignupTambienPuede"
+            style="@style/NormalTextFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/dvLoginTambienPuedeText"
+            android:textColor="@color/grey" />
+
+        <View
+            android:id="@+id/second_divider"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/grey" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
