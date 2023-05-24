@@ -21,7 +21,7 @@
         app:layout_constraintGuide_end="@dimen/GlobalMarginSideSmartSolar" />
 
     <ImageView
-        android:id="@+id/ivLoginIberdrola"
+        android:id="@+id/ivSignupIberdrola"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_size_100"
         android:layout_marginStart="@dimen/dimen_size_100"
@@ -32,53 +32,68 @@
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etLoginUsuario"
-        style="@style/login_edit_text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSignupUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_150"
-        android:hint="@string/etLoginUsuarioHint"
-        android:inputType="textEmailAddress"
-        android:autofillHints="emailAddress"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/ivLoginIberdrola" />
+        app:layout_constraintTop_toBottomOf="@+id/ivSignupIberdrola" >
 
-    <EditText
-        android:id="@+id/etLoginContraseña"
-        style="@style/login_edit_text"
-        android:layout_marginTop="@dimen/dimen_size_20"
-        android:drawableEnd="@drawable/ic_ojo"
-        android:hint="@string/etLoginContraseñaHint"
-        android:inputType="textPassword"
-        android:autofillHints="password"
-        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginUsuario" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietSignupUsuario"
+            style="@style/login_text_input_edit_text"
+            android:hint="@string/etLoginUsuarioHint"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etSignupReptirContraseña"
-        style="@style/login_edit_text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSignupContraseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_20"
-        android:drawableEnd="@drawable/ic_ojo"
-        android:hint="@string/etSignupReptirContraseñaHint"
-        android:inputType="textPassword"
-        android:autofillHints="password"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/tilSignupUsuario">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietSignupContraseña"
+            style="@style/login_text_input_edit_text"
+            android:hint="@string/etLoginContraseñaHint"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSignupRepetirContraseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_size_20"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilSignupContraseña">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietSignupRepetirContraseña"
+            style="@style/login_text_input_edit_text"
+            android:hint="@string/etSignupReptirContraseñaHint"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btSignupRegistrarse"
         style="@style/botones_primarios"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_size_150"
         android:layout_marginStart="@dimen/dimen_size_40"
         android:layout_marginEnd="@dimen/dimen_size_40"
+        android:layout_marginBottom="@dimen/dimen_size_16"
         android:text="@string/btSignupRegistrarseText"
+        app:layout_constraintBottom_toTopOf="@+id/dvLoginTambien"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/etSignupReptirContraseña" />
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo" />
 
     <Button
         android:id="@+id/btSignupIniciarSesion"
@@ -86,27 +101,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_size_40"
-        android:layout_marginTop="@dimen/dimen_size_16"
         android:layout_marginEnd="@dimen/dimen_size_40"
+        android:layout_marginBottom="@dimen/dimen_size_20"
         android:text="@string/btSignupIniciarSesionText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/dvLoginTambien" />
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo" />
 
     <LinearLayout
         android:id="@+id/dvLoginTambien"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_size_16"
+        android:layout_marginBottom="@dimen/dimen_size_16"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btSignupIniciarSesion"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/btSignupRegistrarse">
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo">
 
         <View
             android:id="@+id/first_divider"
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/grey" />
@@ -116,15 +131,15 @@
             style="@style/NormalTextFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/dvLoginTambienPuedeText"
             android:textColor="@color/grey" />
 
         <View
             android:id="@+id/second_divider"
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/grey" />

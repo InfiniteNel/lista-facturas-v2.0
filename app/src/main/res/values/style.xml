@@ -82,10 +82,4 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/green_500</item>
     </style>
-
-    <style name="login_edit_text" parent="NormalTextFragment">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColorHint">@color/grey</item>
-    </style>
 </resources>

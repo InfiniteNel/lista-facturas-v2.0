@@ -124,7 +124,7 @@
         <View
             android:id="@+id/first_divider"
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/grey" />
@@ -142,7 +142,7 @@
         <View
             android:id="@+id/second_divider"
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/grey" />
