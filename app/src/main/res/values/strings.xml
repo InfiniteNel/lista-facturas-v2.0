@@ -47,11 +47,21 @@
     <string name="tietCompensacionSmartSolarHint">Compensación de excedentes</string>
     <string name="tietPotenciaInstalacionSmartSolarHint">Potencia de instalación</string>
 
-    <!-- Fragmetn Samrt Solar Mi Instalacion-->
+    <!-- Fragment Smart Solar Mi Instalacion-->
     <string name="tvInfoTextMiInstalacionSmartSolarText">Aquí tienes los datos de tu instalación fotovoltaica en tiempo real.</string>
     <string name="tvAutoconsumoMiInstalacionSmartSolarText">"Autoconsumo: "</string>
     <string name="tvAutoConsumoValueMiInstalacionSmartSolarText">92%</string>
 
-    <!-- Fragmetn Samrt Solar Energia-->
+    <!-- Fragment Smart Solar Energia-->
     <string name="tvInfoTextEnergiaSmartSolarText">Estamos trabajando en mejorar la App. Tu paneles solares siguen produciendo en breve podrás seguir viendo tu producción solar. Sentimos las molestias.</string>
+
+    <!-- Fragment -->
+    <string name="etLoginUsuarioHint">Usuario</string>
+    <string name="etLoginContraseñaHint">Contraseña</string>
+    <string name="chLoginRecordarContraseñaText">Recordar contraseña</string>
+    <string name="chLoginDatosOlvidadosText"><u>He olvidado mis datos</u></string>
+    <string name="btLoginEntrarText">Entrar</string>
+    <string name="btLoginRegistrarteText">Registrarte</string>
+    <string name="ivLoginIberdrolaContentDescription">Iberdrola</string>
+    <string name="dvLoginTambienPuedeText">También puedes</string>
 </resources>

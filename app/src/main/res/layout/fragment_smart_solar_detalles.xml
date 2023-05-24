@@ -32,7 +32,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietCAUSmaerSolar"
-            style="@style/DetallesSmartSolar_TextInputEditText"
+            style="@style/detalles_smart_solar_text_input_edit_text"
             android:hint="@string/tietCAUSmaerSolarHint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,7 +50,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietEstadoAutoconsumidorSmartSolar"
-            style="@style/DetallesSmartSolar_TextInputEditText"
+            style="@style/detalles_smart_solar_text_input_edit_text"
             android:hint="@string/tietEstadoAutoconsumidorSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,7 +65,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietTipoConsumoSmartSolar"
-            style="@style/DetallesSmartSolar_TextInputEditText"
+            style="@style/detalles_smart_solar_text_input_edit_text"
             android:hint="@string/tietTipoConsumoSmartSolarHint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +80,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietCompensacionSmartSolar"
-            style="@style/DetallesSmartSolar_TextInputEditText"
+            style="@style/detalles_smart_solar_text_input_edit_text"
             android:hint="@string/tietCompensacionSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +95,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietPotenciaInstalacionSmartSolar"
-            style="@style/DetallesSmartSolar_TextInputEditText"
+            style="@style/detalles_smart_solar_text_input_edit_text"
             android:hint="@string/tietPotenciaInstalacionSmartSolarHint" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
