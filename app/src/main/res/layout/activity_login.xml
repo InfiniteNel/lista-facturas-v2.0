@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tietLoginUsuario"
+        android:id="@+id/tilLoginUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_150"
@@ -48,13 +48,14 @@
     </com.google.android.material.textfield.TextInputLayout>
     
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tietLoginContraseña"
+        android:id="@+id/tilLoginContraseña"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_size_20"
         app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/tietLoginUsuario">
+        app:layout_constraintTop_toBottomOf="@+id/tilLoginUsuario">
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/login_text_input_edit_text"
@@ -67,9 +68,10 @@
         style="@style/NormalTextFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="@color/green_500"
         android:text="@string/chLoginRecordarContraseñaText"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/tietLoginContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/tilLoginContraseña" />
 
     <CheckedTextView
         android:id="@+id/chLoginDatosOlvidados"
@@ -88,13 +90,13 @@
         style="@style/botones_primarios"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_size_150"
         android:layout_marginStart="@dimen/dimen_size_40"
         android:layout_marginEnd="@dimen/dimen_size_40"
+        android:layout_marginBottom="@dimen/dimen_size_16"
         android:text="@string/btLoginEntrarText"
+        app:layout_constraintBottom_toTopOf="@+id/dvLoginTambien"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/chLoginDatosOlvidados" />
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo" />
 
     <Button
         android:id="@+id/btLoginRegistrarte"
@@ -102,22 +104,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_size_40"
-        android:layout_marginTop="@dimen/dimen_size_16"
         android:layout_marginEnd="@dimen/dimen_size_40"
+        android:layout_marginBottom="@dimen/dimen_size_20"
         android:text="@string/btLoginRegistrarteText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/dvLoginTambien" />
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo" />
 
     <LinearLayout
         android:id="@+id/dvLoginTambien"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_size_16"
+        android:layout_marginBottom="@dimen/dimen_size_16"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btLoginRegistrarte"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
-        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/btLoginEntrar">
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo">
 
         <View
             android:id="@+id/first_divider"
@@ -132,8 +134,8 @@
             style="@style/NormalTextFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/dvLoginTambienPuedeText"
             android:textColor="@color/grey" />
 
