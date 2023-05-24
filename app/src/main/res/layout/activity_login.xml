@@ -32,28 +32,35 @@
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etLoginUsuario"
-        style="@style/login_edit_text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tietLoginUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_size_150"
-        android:hint="@string/etLoginUsuarioHint"
-        android:inputType="textEmailAddress"
-        android:autofillHints="emailAddress"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/ivLoginIberdrola" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLoginIberdrola" >
 
-    <EditText
-        android:id="@+id/etLoginContraseña"
-        style="@style/login_edit_text"
-        android:layout_marginTop="@dimen/dimen_size_20"
-        android:drawableEnd="@drawable/ic_ojo"
-        android:hint="@string/etLoginContraseñaHint"
-        android:inputType="textPassword"
-        android:autofillHints="password"
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/login_text_input_edit_text"
+            android:hint="@string/etLoginUsuarioHint"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tietLoginContraseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/tietLoginUsuario">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/login_text_input_edit_text"
+            android:hint="@string/etLoginContraseñaHint"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/chLoginRecordarContraseña"
@@ -62,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/chLoginRecordarContraseñaText"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/tietLoginContraseña" />
 
     <CheckedTextView
         android:id="@+id/chLoginDatosOlvidados"

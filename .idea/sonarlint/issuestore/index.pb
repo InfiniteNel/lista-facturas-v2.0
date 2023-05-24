@@ -9,10 +9,6 @@ A
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 }
 Mapp/src/test/java/com/jroslar/listafacturasv02/GetFacturasLocalUseCaseTest.kt,7\9\79e36898f17da26302256be0929ba45d36e8a712
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 
 Oapp/src/test/java/com/jroslar/listafacturasv02/GetFacturasFromApiUseCaseTest.kt,c\2\c28e7e69b357a377d36ceec2bc4173e21ec79503
 
@@ -39,16 +35,12 @@ Oapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/AdapterPracticas.kt
 Papp/src/main/java/com/jroslar/listafacturasv02/data/database/FacturasDatabase.kt,5\7\57da38ac7de48c2f96f2d5fb7387916437739152
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Extensions.kt,3\e\3e8c67aa678af6439bff6e7586c5271fd10af519
-•
-eapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/smartsolar/SmartSolarDetallesViewModel.kt,9\f\9f1971e13e7b23290d502bb70a9d8b83a93fc890
 h
 8app/src/main/java/com/jroslar/listafacturasv02/ui/App.kt,0\6\069d3caf0c139a0d91e943e0dfc6d58ecdc1f310
 –
 fapp/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/DetallesFacturasDialogFragment.kt,9\0\9057301a68b46179651c3c8971f867074de45210
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
-t
-Dapp/src/main/java/com/jroslar/listafacturasv02/di/ViewmodulModule.kt,b\f\bffa0e2c58618810eecf2827ee26935374c673eb
 ”
 dapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarMiInstalacionFragment.kt,2\a\2ace9a0401b4b145987081075d89761fc32aa158
 Ž
@@ -69,8 +61,6 @@ y
 Iapp/src/main/java/com/jroslar/listafacturasv02/data/DetallesRepository.kt,2\5\25dc07f3ec3761b76712dec7230f78c0c15ddfa4
 ‚
 Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasFromApiUseCase.kt,e\8\e8c071ff285e61c7f03f0b7b1247086271263e61
-o
-?app/src/main/java/com/jroslar/listafacturasv02/di/DataModule.kt,c\d\cde219212f1718acea5b9e17b83a05a42d6052d2
 ~
 Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 
