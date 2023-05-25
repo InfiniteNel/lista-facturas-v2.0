@@ -66,9 +66,15 @@
     <string name="dvLoginTambienPuedeText">También puedes</string>
     <string name="errortietLoginUsuario">Email no valido</string>
     <string name="errortietLoginContraseA">El valor no puede estar vacio</string>
+    <string name="errortietLoginNotExit">Email o contraseña no coincide</string>
 
     <!-- Activity Signup -->
     <string name="etSignupReptirContraseñaHint">Repetir Contraseña</string>
     <string name="btSignupRegistrarseText">Registrarse</string>
     <string name="btSignupIniciarSesionText">Iniciar Sesión</string>
+    <string name="errortietSignupUsuario">Email no valido</string>
+    <string name="errortietSignupContraseA">Contraseña debe tener 6 caracteres</string>
+    <string name="errortietSignupRepetirContraseA">Contraseña no coincide</string>
+    <string name="errortietSignupDuplicate">Usuario ya existe</string>
+
 </resources>
