@@ -13,6 +13,7 @@ import com.google.firebase.ktx.Firebase
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
 import com.jroslar.listafacturasv02.databinding.ActivityLoginBinding
+import com.jroslar.listafacturasv02.ui.App
 import com.jroslar.listafacturasv02.ui.view.dashboard.DashBoardActivity
 import com.jroslar.listafacturasv02.ui.viewmodel.login.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -40,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Log.d("FireBase", "signInWithEmail:success")
+                            dataSaved()
                             startActivity(Intent(this, DashBoardActivity::class.java))
                         } else {
                             Log.w("FireBase", "signInWithEmail:failure", task.exception)
@@ -90,6 +92,35 @@ class LoginActivity : AppCompatActivity() {
                 validatePassword(p0.toString())
             }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val email = App.prefs.email
+        val password = App.prefs.password
+
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            binding.chLoginRecordarContraseA.isChecked = true
+            binding.tietLoginUsuario.setText(email)
+            binding.tietLoginContraseA.setText(password)
+        } else {
+            binding.tietLoginUsuario.text = null
+            binding.tietLoginContraseA.text = null
+            binding.tilLoginUsuario.error = null
+            binding.tilLoginContraseA.error = null
+        }
+    }
+
+    private fun dataSaved() {
+
+        if (binding.chLoginRecordarContraseA.isChecked) {
+            App.prefs.email = viewModel.emailValue.value!!
+            App.prefs.password = viewModel.passwordValue.value!!
+        } else {
+            App.prefs.email = ""
+            App.prefs.password = ""
+        }
     }
 
     private fun validateError() {

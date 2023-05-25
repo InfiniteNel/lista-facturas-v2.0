@@ -33,10 +33,6 @@ Oapp/src/main/java/com/jroslar/listafacturasv02/data/database/dao/FacturasDao.kt
 Oapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/AdapterPracticas.kt,a\4\a42c77b2b4d1a237a844c2cba8cf80a1f3dec550
 €
 Papp/src/main/java/com/jroslar/listafacturasv02/data/database/FacturasDatabase.kt,5\7\57da38ac7de48c2f96f2d5fb7387916437739152
-q
-Aapp/src/main/java/com/jroslar/listafacturasv02/core/Extensions.kt,3\e\3e8c67aa678af6439bff6e7586c5271fd10af519
-h
-8app/src/main/java/com/jroslar/listafacturasv02/ui/App.kt,0\6\069d3caf0c139a0d91e943e0dfc6d58ecdc1f310
 –
 fapp/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/DetallesFacturasDialogFragment.kt,9\0\9057301a68b46179651c3c8971f867074de45210
 ”
