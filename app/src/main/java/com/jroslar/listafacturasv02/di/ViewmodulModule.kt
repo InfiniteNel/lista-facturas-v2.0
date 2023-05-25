@@ -2,6 +2,7 @@ package com.jroslar.listafacturasv02.di
 
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.FiltrarFacturasViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.listafacturas.ListaFacturasViewModel
+import com.jroslar.listafacturasv02.ui.viewmodel.login.ForgotPasswordViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.login.LoginViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.login.SignupViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.smartsolar.SmartSolarDetallesViewModel
@@ -14,4 +15,5 @@ val viewModelModule = module {
     viewModelOf(::SmartSolarDetallesViewModel)
     viewModelOf(::SignupViewModel)
     viewModelOf(::LoginViewModel)
+    viewModelOf(::ForgotPasswordViewModel)
 }

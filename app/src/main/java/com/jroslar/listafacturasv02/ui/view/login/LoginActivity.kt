@@ -55,6 +55,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.chLoginDatosOlvidados.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
         binding.btLoginRegistrarte.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }

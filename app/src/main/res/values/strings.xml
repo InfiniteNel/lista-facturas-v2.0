@@ -77,4 +77,12 @@
     <string name="errortietSignupRepetirContraseA">Contraseña no coincide</string>
     <string name="errortietSignupDuplicate">Usuario ya existe</string>
 
+
+    <!-- Activity ForgotPassword -->
+    <string name="btForgotPasswordEntrarText">Enviar</string>
+    <string name="tietForgotPasswordUsuarioText">Email</string>
+    <string name="errortietForgotPasswordEmail">Email no valido</string>
+    <string name="errortietForgotPasswordNotExit">Email no existe</string>
+    <string name="forgotPasswordsendEmail">Email enviado</string>
+
 </resources>

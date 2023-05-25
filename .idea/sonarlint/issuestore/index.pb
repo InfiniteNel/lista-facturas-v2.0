@@ -39,8 +39,6 @@ h
 8app/src/main/java/com/jroslar/listafacturasv02/ui/App.kt,0\6\069d3caf0c139a0d91e943e0dfc6d58ecdc1f310
 ñ
 fapp/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/DetallesFacturasDialogFragment.kt,9\0\9057301a68b46179651c3c8971f867074de45210
-q
-Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
 î
 dapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarMiInstalacionFragment.kt,2\a\2ace9a0401b4b145987081075d89761fc32aa158
 é
@@ -57,12 +55,8 @@ Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetDetallesFromApiUseCase
 Napp/src/main/java/com/jroslar/listafacturasv02/data/network/DetallesService.kt,8\2\8269a9fa83328e5bf8a5a4e2f5f7c2950cb70917
 y
 Iapp/src/main/java/com/jroslar/listafacturasv02/data/FacturasRepository.kt,9\4\94340be0ee7b2c7cee75259e2607034a317bb469
-y
-Iapp/src/main/java/com/jroslar/listafacturasv02/data/DetallesRepository.kt,2\5\25dc07f3ec3761b76712dec7230f78c0c15ddfa4
 Ç
 Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasFromApiUseCase.kt,e\8\e8c071ff285e61c7f03f0b7b1247086271263e61
-~
-Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 ç
 ]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasFragment.kt,8\8\88207bb67240628147e2f00452060ce34fa3bf83
 °
@@ -77,8 +71,6 @@ capp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/listafacturas/Lista
 ]app/src/main/java/com/jroslar/listafacturasv02/data/adapter/SmartSolarSectionsPagerAdapter.kt,a\c\ac30dac8117b5d2b607b05231ff4ee10f3c907f5
 ç
 ]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasActivity.kt,a\3\a38c5d4a92ea02b29f7b0a680bb75ce78fc80816
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 Ö
 Uapp/src/main/java/com/jroslar/listafacturasv02/ui/view/dashboard/DashBoardActivity.kt,2\6\2678c5e3d7dcefb86e56b121024d0e150a7f53a1
 ï

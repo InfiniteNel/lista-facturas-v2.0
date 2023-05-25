@@ -29,6 +29,10 @@
             android:exported="true"
             android:theme="@style/Theme.ListaFacturasV02.NoActionBar" />
         <activity
+            android:name=".ui.view.login.ForgotPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ListaFacturasV02.NoActionBar" />
+        <activity
             android:name=".ui.view.login.SignupActivity"
             android:exported="false"
             android:theme="@style/Theme.ListaFacturasV02.NoActionBar" />
