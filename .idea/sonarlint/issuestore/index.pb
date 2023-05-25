@@ -65,3 +65,27 @@ Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasFromApiUseCase
 Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 ç
 ]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasFragment.kt,8\8\88207bb67240628147e2f00452060ce34fa3bf83
+°
+qapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarSolicitudAutoconsumoDialogFragment.kt,a\1\a19d81fb61b6d184ac4a3d2cbd18c07e23723fd0
+É
+Sapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/ListaFacturasAdapter.kt,d\c\dcb12eaf0f5f5aa6928ff4d3dc89428c5a82e701
+è
+_app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/FiltrarFacturasFragment.kt,9\8\981ea66140950a33513cddc1471abc16abdb0127
+ì
+capp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/listafacturas/ListaFacturasViewModel.kt,4\3\433a250ffbcf217ff72b0c664ea1eb2ac60332fe
+ç
+]app/src/main/java/com/jroslar/listafacturasv02/data/adapter/SmartSolarSectionsPagerAdapter.kt,a\c\ac30dac8117b5d2b607b05231ff4ee10f3c907f5
+ç
+]app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/ListaFacturasActivity.kt,a\3\a38c5d4a92ea02b29f7b0a680bb75ce78fc80816
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+Ö
+Uapp/src/main/java/com/jroslar/listafacturasv02/ui/view/dashboard/DashBoardActivity.kt,2\6\2678c5e3d7dcefb86e56b121024d0e150a7f53a1
+ï
+eapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/smartsolar/SmartSolarDetallesViewModel.kt,9\f\9f1971e13e7b23290d502bb70a9d8b83a93fc890
+ï
+eapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/listafacturas/FiltrarFacturasViewModel.kt,1\c\1c532315149cd9efdb9401f80460acbe0e0c0ab7
+á
+Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarActivity.kt,f\c\fc3464dd939db05c2067b81d48fa6358df9512e4
+è
+_app/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarDetallesFragment.kt,3\b\3bc134420db597ffc9e5532d4e27c2d23338ec77

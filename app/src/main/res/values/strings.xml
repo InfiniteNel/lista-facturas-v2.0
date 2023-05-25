@@ -64,6 +64,8 @@
     <string name="btLoginRegistrarteText">Registrarte</string>
     <string name="ivLoginIberdrolaContentDescription">Iberdrola</string>
     <string name="dvLoginTambienPuedeText">También puedes</string>
+    <string name="errortietLoginUsuario">Email no valido</string>
+    <string name="errortietLoginContraseA">El valor no puede estar vacio</string>
 
     <!-- Activity Signup -->
     <string name="etSignupReptirContraseñaHint">Repetir Contraseña</string>
