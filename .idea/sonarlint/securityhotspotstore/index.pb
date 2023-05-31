@@ -85,5 +85,3 @@ Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarAct
 Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
-„
-Tapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/login/SignupViewModel.kt,e\c\ecfb1c4115adab014f2a6dd5878bf7be0cc3365c

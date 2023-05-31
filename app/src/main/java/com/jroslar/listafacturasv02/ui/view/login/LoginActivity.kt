@@ -112,6 +112,7 @@ class LoginActivity : AppCompatActivity() {
             binding.tietLoginUsuario.setText(email)
             binding.tietLoginContraseA.setText(password)
         } else {
+            binding.chLoginRecordarContraseA.isChecked = false
             binding.tietLoginUsuario.text = null
             binding.tietLoginContraseA.text = null
             binding.tilLoginUsuario.isErrorEnabled = false
