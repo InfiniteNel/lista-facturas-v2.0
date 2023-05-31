@@ -81,15 +81,9 @@ Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarAct
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-y
-Iapp/src/main/java/com/jroslar/listafacturasv02/data/DetallesRepository.kt,2\5\25dc07f3ec3761b76712dec7230f78c0c15ddfa4
 ~
 Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
-ƒ
-Sapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/login/LoginViewModel.kt,2\b\2b88b4c5d28d42f4f56d851d30df24968c1ba93d
 „
 Tapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/login/SignupViewModel.kt,e\c\ecfb1c4115adab014f2a6dd5878bf7be0cc3365c
-Œ
-\app/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/login/ForgotPasswordViewModel.kt,d\1\d1fff983d05e000e1dd34667d804e654a48048bf

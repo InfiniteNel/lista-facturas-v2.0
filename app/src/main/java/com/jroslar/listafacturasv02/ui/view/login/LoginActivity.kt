@@ -57,6 +57,13 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.chLoginRecordarContraseA.setOnClickListener {
+            if (!binding.chLoginRecordarContraseA.isChecked) {
+                App.prefs.email = ""
+                App.prefs.password = ""
+            }
+        }
+
         binding.chLoginDatosOlvidados.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
