@@ -107,8 +107,8 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.tietLoginUsuario.text = null
             binding.tietLoginContraseA.text = null
-            binding.tilLoginUsuario.error = null
-            binding.tilLoginContraseA.error = null
+            binding.tilLoginUsuario.isErrorEnabled = false
+            binding.tilLoginContraseA.isErrorEnabled = false
         }
     }
 
