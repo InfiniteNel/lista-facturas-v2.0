@@ -3,15 +3,10 @@ package com.jroslar.listafacturasv02.ui.view.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.onTextChanged
 import com.jroslar.listafacturasv02.databinding.ActivityLoginBinding
 import com.jroslar.listafacturasv02.ui.App
 import com.jroslar.listafacturasv02.ui.view.dashboard.DashBoardActivity
@@ -19,7 +14,6 @@ import com.jroslar.listafacturasv02.ui.viewmodel.login.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
     private var _viewModel: LoginViewModel? = null
     private val viewModel get() = _viewModel!!
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,81 +22,42 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = Firebase.auth
-
         _viewModel = getViewModel()
 
-
-        binding.btLoginEntrar.setOnClickListener {
-            if (viewModel.validateData()) {
-                auth.signInWithEmailAndPassword(viewModel.emailValue.value!!,
-                    viewModel.passwordValue.value!!
-                )
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            Log.d("FireBase", "signInWithEmail:success")
-                            dataSaved()
-                            startActivity(Intent(this, DashBoardActivity::class.java))
-                        } else {
-                            Log.w("FireBase", "signInWithEmail:failure", task.exception)
-                            Toast.makeText(
-                                baseContext,
-                                R.string.errortietLoginNotExit.getResourceStringAndroid(baseContext),
-                                Toast.LENGTH_SHORT,
-                            ).show()
-                        }
-                    }
-            } else {
-                validateError()
+        viewModel._state.observe(this) {
+            when (it) {
+                LoginViewModel.LoginResult.LOADING -> {
+                    setEnabledBt(false)
+                }
+                LoginViewModel.LoginResult.SUCCESS -> {
+                    dataSaved()
+                    startActivity(Intent(this, DashBoardActivity::class.java))
+                }
+                LoginViewModel.LoginResult.ERROR_DATA -> {
+                    validateError()
+                    setEnabledBt(true)
+                }
+                LoginViewModel.LoginResult.NO_VALID_DATA -> {
+                    Toast.makeText(
+                        baseContext,
+                        R.string.errortietLoginNotExit.getResourceStringAndroid(baseContext),
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    setEnabledBt(true)
+                }
+                else -> {
+                    //
+                }
             }
         }
 
-        binding.chLoginRecordarContraseA.setOnClickListener {
-            if (!binding.chLoginRecordarContraseA.isChecked) {
-                App.prefs.email = ""
-                App.prefs.password = ""
-            }
-        }
-
-        binding.chLoginDatosOlvidados.setOnClickListener {
-            startActivity(Intent(this, ForgotPasswordActivity::class.java))
-        }
-
-        binding.btLoginRegistrarte.setOnClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
-        }
-
-        binding.tietLoginUsuario.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                validateUsuario(p0.toString())
-            }
-        })
-
-        binding.tietLoginContraseA.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                validatePassword(p0.toString())
-            }
-        })
+        initListeners()
     }
 
     override fun onStart() {
         super.onStart()
+
+        setEnabledBt(true)
 
         val email = App.prefs.email
         val password = App.prefs.password
@@ -120,6 +75,40 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun initListeners() {
+        binding.btLoginEntrar.setOnClickListener {
+            viewModel.validateData()
+        }
+
+        binding.chLoginRecordarContraseA.setOnClickListener {
+            if (!binding.chLoginRecordarContraseA.isChecked) {
+                App.prefs.email = ""
+                App.prefs.password = ""
+            }
+        }
+
+        binding.chLoginDatosOlvidados.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
+        binding.btLoginRegistrarte.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+        }
+
+        binding.tietLoginUsuario.onTextChanged {
+            validateUsuario(it)
+        }
+
+        binding.tietLoginContraseA.onTextChanged {
+            validatePassword(it)
+        }
+    }
+
+    private fun setEnabledBt(isEnabled: Boolean) {
+        binding.btLoginEntrar.isEnabled = isEnabled
+        binding.btLoginRegistrarte.isEnabled = isEnabled
+    }
+
     private fun dataSaved() {
 
         if (binding.chLoginRecordarContraseA.isChecked) {
@@ -132,12 +121,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validateError() {
-        if (!binding.tilLoginUsuario.isErrorEnabled) {
-            binding.tilLoginUsuario.error = R.string.errortietLoginUsuario.getResourceStringAndroid(baseContext)
-        }
-        if (!binding.tilLoginContraseA.isErrorEnabled) {
-            setErrorContrasea()
-        }
+        validateUsuario(binding.tietLoginUsuario.text.toString())
+        validatePassword(binding.tietLoginContraseA.text.toString())
     }
 
     private fun setErrorContrasea() {

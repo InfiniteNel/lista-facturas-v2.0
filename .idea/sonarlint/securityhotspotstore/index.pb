@@ -35,8 +35,6 @@ dapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarMiI
 capp/src/main/java/com/jroslar/listafacturasv02/data/network/retrofit/DetallesSmartSolarApiClient.kt,4\e\4e86d8a90a873ae1e4c56ebfe3bb73907d4369b5
 ‰
 Yapp/src/main/java/com/jroslar/listafacturasv02/data/network/retrofit/FacturasApiClient.kt,0\2\02dd25666b0c1c402f004945560fd12dd015dcd3
-€
-Papp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasLocalUseCase.kt,b\0\b069447d400823de7de24357a37ee8fb3fd60f77
 ‚
 Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasFromApiUseCase.kt,e\8\e8c071ff285e61c7f03f0b7b1247086271263e61
 ¡
@@ -49,7 +47,3 @@ Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarAct
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-q
-Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
-t
-Dapp/src/main/java/com/jroslar/listafacturasv02/core/EncryptHelper.kt,d\7\d74641998813dd5c514280f85bb576ee62bb2533

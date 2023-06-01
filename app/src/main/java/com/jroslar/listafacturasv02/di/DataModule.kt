@@ -9,10 +9,7 @@ import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.network.DetallesService
 import com.jroslar.listafacturasv02.data.network.FacturasService
 import com.jroslar.listafacturasv02.data.network.FirebaseService
-import com.jroslar.listafacturasv02.domain.CreateAccountUseCase
-import com.jroslar.listafacturasv02.domain.GetDetallesFromApiUseCase
-import com.jroslar.listafacturasv02.domain.GetFacturasFromApiUseCase
-import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
+import com.jroslar.listafacturasv02.domain.*
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.json.*
@@ -79,6 +76,7 @@ val dataModule = module {
     factoryOf(::GetFacturasLocalUseCase)
     factoryOf(::GetDetallesFromApiUseCase)
     factoryOf(::CreateAccountUseCase)
+    factoryOf(::LoginUseCase)
 }
 
 enum class Qualifier {
