@@ -47,8 +47,6 @@ Yapp/src/main/java/com/jroslar/listafacturasv02/data/network/retrofit/FacturasAp
 Papp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasLocalUseCase.kt,b\0\b069447d400823de7de24357a37ee8fb3fd60f77
 Ç
 Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetDetallesFromApiUseCase.kt,7\4\74ae2a2b8dca60553c589977e2eee1bdd9c00163
-~
-Napp/src/main/java/com/jroslar/listafacturasv02/data/network/DetallesService.kt,8\2\8269a9fa83328e5bf8a5a4e2f5f7c2950cb70917
 y
 Iapp/src/main/java/com/jroslar/listafacturasv02/data/FacturasRepository.kt,9\4\94340be0ee7b2c7cee75259e2607034a317bb469
 Ç
@@ -71,17 +69,17 @@ _app/src/main/java/com/jroslar/listafacturasv02/ui/view/listafacturas/FiltrarFac
 Uapp/src/main/java/com/jroslar/listafacturasv02/ui/view/dashboard/DashBoardActivity.kt,2\6\2678c5e3d7dcefb86e56b121024d0e150a7f53a1
 ï
 eapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/listafacturas/FiltrarFacturasViewModel.kt,1\c\1c532315149cd9efdb9401f80460acbe0e0c0ab7
-ï
-eapp/src/main/java/com/jroslar/listafacturasv02/ui/viewmodel/smartsolar/SmartSolarDetallesViewModel.kt,9\f\9f1971e13e7b23290d502bb70a9d8b83a93fc890
-è
-_app/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarDetallesFragment.kt,3\b\3bc134420db597ffc9e5532d4e27c2d23338ec77
 á
 Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarActivity.kt,f\c\fc3464dd939db05c2067b81d48fa6358df9512e4
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-~
-Napp/src/main/java/com/jroslar/listafacturasv02/data/network/FacturasService.kt,2\e\2e8207fbd4865af97077684a33512fa8d9f2d5ff
 q
 Aapp/src/main/java/com/jroslar/listafacturasv02/core/Constantes.kt,3\d\3d41cdf026fd73158284a0b09d4ba7ec09e367f4
+t
+Dapp/src/main/java/com/jroslar/listafacturasv02/core/EncryptHelper.kt,d\7\d74641998813dd5c514280f85bb576ee62bb2533
+l
+<app/src/main/java/com/jroslar/listafacturasv02/core/Prefs.kt,7\a\7a620fe4ed4a0e0112a743d2783cc0b12dfd082a
+t
+Dapp/src/main/java/com/jroslar/listafacturasv02/di/ViewmodulModule.kt,b\f\bffa0e2c58618810eecf2827ee26935374c673eb

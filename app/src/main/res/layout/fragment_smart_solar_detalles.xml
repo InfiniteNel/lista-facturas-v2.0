@@ -44,6 +44,7 @@
         app:endIconCheckable="true"
         app:endIconDrawable="@drawable/selector_tooltip_azul_estado"
         app:endIconMode="custom"
+        app:endIconTint="@null"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toBottomOf="@+id/tilCAU">
