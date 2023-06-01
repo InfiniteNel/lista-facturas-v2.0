@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
 import com.jroslar.listafacturasv02.databinding.ActivityLoginBinding
 import com.jroslar.listafacturasv02.ui.App
 import com.jroslar.listafacturasv02.ui.view.dashboard.DashBoardActivity

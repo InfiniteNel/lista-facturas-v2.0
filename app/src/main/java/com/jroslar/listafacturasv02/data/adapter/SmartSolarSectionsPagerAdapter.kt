@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
 import com.jroslar.listafacturasv02.ui.view.smartsolar.SmartSolarDetallesFragment
 import com.jroslar.listafacturasv02.ui.view.smartsolar.SmartSolarEnergiaFragment
 import com.jroslar.listafacturasv02.ui.view.smartsolar.SmartSolarMiInstalacionFragment

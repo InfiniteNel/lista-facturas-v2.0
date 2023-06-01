@@ -15,8 +15,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
-import com.jroslar.listafacturasv02.core.Extensions.Companion.castStringToDate
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.castStringToDate
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
 import com.jroslar.listafacturasv02.data.model.FacturasModel
 import com.jroslar.listafacturasv02.databinding.FragmentFiltrarFacturasBinding
 import com.jroslar.listafacturasv02.ui.view.listafacturas.ListaFacturasFragment.Companion.DATA_FILTER

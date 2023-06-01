@@ -13,8 +13,6 @@ Mapp/src/test/java/com/jroslar/listafacturasv02/GetFacturasLocalUseCaseTest.kt,
 Oapp/src/test/java/com/jroslar/listafacturasv02/GetFacturasFromApiUseCaseTest.kt,c\2\c28e7e69b357a377d36ceec2bc4173e21ec79503
 
 Oapp/src/test/java/com/jroslar/listafacturasv02/GetDetallesFromApiUseCaseTest.kt,d\b\db1db472c85ae0c5f057e395695fbbc56b499e71
-Ö
-Uapp/src/main/java/com/jroslar/listafacturasv02/data/network/model/FacturasResponse.kt,5\5\5582838e295244580b9fbe75fdace2c16b31ad41
 Ñ
 Tapp/src/main/java/com/jroslar/listafacturasv02/data/network/model/FacturaResponse.kt,7\1\71cafedd8bbb6d2810587f34ff90a57889e34ab5
 Ö
@@ -43,10 +41,6 @@ Papp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasLocalUseCase.k
 Rapp/src/main/java/com/jroslar/listafacturasv02/domain/GetFacturasFromApiUseCase.kt,e\8\e8c071ff285e61c7f03f0b7b1247086271263e61
 °
 qapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarSolicitudAutoconsumoDialogFragment.kt,a\1\a19d81fb61b6d184ac4a3d2cbd18c07e23723fd0
-É
-Sapp/src/main/java/com/jroslar/listafacturasv02/data/adapter/ListaFacturasAdapter.kt,d\c\dcb12eaf0f5f5aa6928ff4d3dc89428c5a82e701
-ç
-]app/src/main/java/com/jroslar/listafacturasv02/data/adapter/SmartSolarSectionsPagerAdapter.kt,a\c\ac30dac8117b5d2b607b05231ff4ee10f3c907f5
 Ö
 Uapp/src/main/java/com/jroslar/listafacturasv02/ui/view/dashboard/DashBoardActivity.kt,2\6\2678c5e3d7dcefb86e56b121024d0e150a7f53a1
 á

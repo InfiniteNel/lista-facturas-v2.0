@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jroslar.listafacturasv02.R
 import com.jroslar.listafacturasv02.core.Constantes.Companion.DescEstado
-import com.jroslar.listafacturasv02.core.Extensions.Companion.castStringToDate
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.castStringToDate
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.databinding.ItemFacturasBinding
 import java.time.format.DateTimeFormatter

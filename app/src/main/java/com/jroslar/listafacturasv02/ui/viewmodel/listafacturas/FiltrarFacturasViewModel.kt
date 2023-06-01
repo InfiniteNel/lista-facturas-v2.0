@@ -4,7 +4,7 @@ import android.os.Build
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jroslar.listafacturasv02.core.Extensions.Companion.castStringToDate
+import com.jroslar.listafacturasv02.core.extensions.castStringToDate
 import com.jroslar.listafacturasv02.data.model.FacturaModel
 import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
 import kotlinx.coroutines.launch

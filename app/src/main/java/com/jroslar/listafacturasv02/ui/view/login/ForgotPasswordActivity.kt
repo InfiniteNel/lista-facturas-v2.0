@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
 import com.jroslar.listafacturasv02.databinding.ActivityForgotPasswordBinding
 import com.jroslar.listafacturasv02.ui.viewmodel.login.ForgotPasswordViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel

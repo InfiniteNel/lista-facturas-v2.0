@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jroslar.listafacturasv02.R
-import com.jroslar.listafacturasv02.core.Extensions.Companion.getResourceStringAndroid
-import com.jroslar.listafacturasv02.core.Extensions.Companion.onTextChanged
+import com.jroslar.listafacturasv02.core.extensions.getResourceStringAndroid
+import com.jroslar.listafacturasv02.core.extensions.onTextChanged
 import com.jroslar.listafacturasv02.databinding.ActivitySignupBinding
 import com.jroslar.listafacturasv02.ui.view.dashboard.DashBoardActivity
 import com.jroslar.listafacturasv02.ui.viewmodel.login.SignupViewModel
