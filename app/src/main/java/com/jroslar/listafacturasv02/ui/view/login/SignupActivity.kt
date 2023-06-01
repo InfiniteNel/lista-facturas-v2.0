@@ -28,12 +28,16 @@ class SignupActivity : AppCompatActivity() {
 
         viewModel._state.observe(this) {
             when (it) {
+                SignupViewModel.SignupResult.LOADING -> {
+                    setEnabledBt(false)
+                }
                 SignupViewModel.SignupResult.SUCCESS -> {
                     startActivity(Intent(this, DashBoardActivity::class.java))
                     finish()
                 }
                 SignupViewModel.SignupResult.ERROR_DATA -> {
                     validateError()
+                    setEnabledBt(true)
                 }
                 SignupViewModel.SignupResult.FAIL -> {
                     Toast.makeText(
@@ -41,6 +45,7 @@ class SignupActivity : AppCompatActivity() {
                         R.string.errortietSignupDuplicate.getResourceStringAndroid(baseContext),
                         Toast.LENGTH_SHORT,
                     ).show()
+                    setEnabledBt(true)
                 }
                 else -> {
                     //
@@ -74,16 +79,15 @@ class SignupActivity : AppCompatActivity() {
 
     }
 
+    private fun setEnabledBt(isEnabled: Boolean) {
+        binding.btSignupRegistrarse.isEnabled = isEnabled
+        binding.btSignupIniciarSesion.isEnabled = isEnabled
+    }
+
     private fun validateError() {
-        if (!binding.tilSignupUsuario.isErrorEnabled) {
-            binding.tilSignupUsuario.error = R.string.errortietSignupUsuario.getResourceStringAndroid(baseContext)
-        }
-        if (!binding.tilSignupContraseA.isErrorEnabled) {
-            setErrorContrasea()
-        }
-        if (!binding.tilSignupRepetirContraseA.isErrorEnabled) {
-            setErrorRepetirContrasea()
-        }
+        validateUsuario(binding.tietSignupUsuario.text.toString())
+        validatePassword(binding.tietSignupContraseA.text.toString())
+        validateRepeatPassword(binding.tietSignupRepetirContraseA.text.toString())
     }
 
     private fun validateUsuario(usuario: String) {
