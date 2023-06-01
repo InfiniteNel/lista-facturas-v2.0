@@ -77,6 +77,7 @@ val dataModule = module {
     factoryOf(::GetDetallesFromApiUseCase)
     factoryOf(::CreateAccountUseCase)
     factoryOf(::LoginUseCase)
+    factoryOf(::SendEmailResetPasswordUseCase)
 }
 
 enum class Qualifier {
