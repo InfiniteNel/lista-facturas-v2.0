@@ -1,12 +1,15 @@
 package com.jroslar.listafacturasv02.di
 
 import co.infinum.retromock.Retromock
+import com.google.firebase.auth.FirebaseAuth
 import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_SERVIDOR_DETALLES
 import com.jroslar.listafacturasv02.core.Constantes.Companion.URL_SERVIDOR_FACTURAS
 import com.jroslar.listafacturasv02.data.DetallesRepository
 import com.jroslar.listafacturasv02.data.FacturasRepository
 import com.jroslar.listafacturasv02.data.network.DetallesService
 import com.jroslar.listafacturasv02.data.network.FacturasService
+import com.jroslar.listafacturasv02.data.network.FirebaseService
+import com.jroslar.listafacturasv02.domain.CreateAccountUseCase
 import com.jroslar.listafacturasv02.domain.GetDetallesFromApiUseCase
 import com.jroslar.listafacturasv02.domain.GetFacturasFromApiUseCase
 import com.jroslar.listafacturasv02.domain.GetFacturasLocalUseCase
@@ -61,15 +64,21 @@ val dataModule = module {
     single {
         Dispatchers.IO
     }
+    single {
+        FirebaseAuth.getInstance()
+    }
 
     factory { FacturasService(get(named(Qualifier.FacturasRetrofit)), get(named(Qualifier.FacturasRetromock)), get()) }
     factory { DetallesService(get(named(Qualifier.DetallesRetrofit)), get(named(Qualifier.DetallesRetromock))) }
+    factoryOf(::FirebaseService)
+
     factoryOf(::FacturasRepository)
     factoryOf(::DetallesRepository)
 
     factoryOf(::GetFacturasFromApiUseCase)
     factoryOf(::GetFacturasLocalUseCase)
     factoryOf(::GetDetallesFromApiUseCase)
+    factoryOf(::CreateAccountUseCase)
 }
 
 enum class Qualifier {

@@ -2,7 +2,10 @@ package com.jroslar.listafacturasv02.core
 
 import android.content.Context
 import android.os.Build
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.annotation.RequiresApi
+import com.google.android.material.textfield.TextInputEditText
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -35,6 +38,20 @@ class Extensions {
                 list[1] = "0${list[1]}"
             }
             return "${list[0]}/${list[1]}/${list[2]}"
+        }
+
+        fun TextInputEditText.onTextChanged(listener: (String) -> Unit) {
+            this.addTextChangedListener(object: TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    //
+                }
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    //
+                }
+                override fun afterTextChanged(p0: Editable?) {
+                    listener(p0.toString())
+                }
+            })
         }
     }
 
