@@ -23,8 +23,8 @@ class FirebaseService constructor(
         }
     }
 
-    suspend fun login(email: String, password: String): LoginViewModel.LoginResult = kotlin.runCatching {
-        firebaseAuth.signInWithEmailAndPassword(email, password).await()
+    suspend fun login(userModel: UserModel): LoginViewModel.LoginResult = kotlin.runCatching {
+        firebaseAuth.signInWithEmailAndPassword(userModel.userEmail, userModel.userPassword).await()
     }.toLoginResult()
 
     suspend fun sendEmailResetPassword(email: String): ForgotPasswordViewModel.ForgotPasswordResult {

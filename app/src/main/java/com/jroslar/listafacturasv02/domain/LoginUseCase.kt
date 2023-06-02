@@ -10,6 +10,6 @@ class LoginUseCase constructor(
 ){
 
     suspend operator fun invoke(userModel: UserModel): LoginViewModel.LoginResult {
-        return firebaseService.login(userModel.userEmail, userModel.userPassword)
+        return firebaseService.login(userModel)
     }
 }
