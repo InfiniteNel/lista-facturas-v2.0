@@ -1,7 +1,7 @@
 package com.jroslar.listafacturasv02.ui
 
 import android.app.Application
-import com.jroslar.listafacturasv02.core.Prefs
+import com.jroslar.listafacturasv02.core.utils.Prefs
 import com.jroslar.listafacturasv02.di.dataModule
 import com.jroslar.listafacturasv02.di.viewModelModule
 import org.koin.android.ext.koin.androidContext

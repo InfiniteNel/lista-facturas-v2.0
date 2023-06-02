@@ -1,4 +1,4 @@
-package com.jroslar.listafacturasv02.core
+package com.jroslar.listafacturasv02.core.utils
 
 import android.content.Context
 import android.content.SharedPreferences

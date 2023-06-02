@@ -1,4 +1,4 @@
-package com.jroslar.listafacturasv02.core
+package com.jroslar.listafacturasv02.core.utils
 
 import android.util.Base64
 import javax.crypto.Cipher
