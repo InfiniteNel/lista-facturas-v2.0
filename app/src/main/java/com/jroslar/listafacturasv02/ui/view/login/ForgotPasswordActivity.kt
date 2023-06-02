@@ -47,11 +47,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     setEnabledBt(true)
                 }
                 ForgotPasswordViewModel.ForgotPasswordResult.NO_VALID_DATA -> {
-                    Toast.makeText(
-                        baseContext,
-                        R.string.errortietForgotPasswordNotExit.getResourceStringAndroid(baseContext),
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                    binding.tilForgotPasswordUsuario.error = R.string.errortietForgotPasswordNotExit.getResourceStringAndroid(baseContext)
                     setEnabledBt(true)
                 }
                 else -> {
