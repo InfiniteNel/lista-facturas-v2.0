@@ -66,7 +66,10 @@
     <string name="dvLoginTambienPuedeText">También puedes</string>
     <string name="errortietLoginUsuario">Email no valido</string>
     <string name="errortietLoginContraseA">El valor no puede estar vacio</string>
-    <string name="errortietLoginNotExit">Email o contraseña no coincide</string>
+    <string name="errortietLoginNotExit">Email no existe</string>
+    <string name="errortietLoginNotPassword">Contraseña no es correcta</string>
+    <string name="errortietLoginTooManyRequest">La cuenta a sido bloqueda temporalmente, intentelo más tarde</string>
+    <string name="errortietNotLogin">No se pudo iniciar sesión</string>
 
     <!-- Activity Signup -->
     <string name="etSignupReptirContraseñaHint">Repetir Contraseña</string>

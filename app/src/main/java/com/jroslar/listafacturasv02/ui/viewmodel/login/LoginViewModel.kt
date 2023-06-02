@@ -56,6 +56,9 @@ class LoginViewModel: ViewModel() {
         LOADING,
         SUCCESS,
         ERROR_DATA,
-        NO_VALID_DATA
+        ERROR_INVALID_EMAIL,
+        ERROR_INVALID_PASSWORD,
+        ERROR_TOO_MANY_REQUEST,
+        FAIL
     }
 }

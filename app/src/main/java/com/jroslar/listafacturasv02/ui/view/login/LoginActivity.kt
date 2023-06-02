@@ -37,10 +37,26 @@ class LoginActivity : AppCompatActivity() {
                     validateError()
                     setEnabledBt(true)
                 }
-                LoginViewModel.LoginResult.NO_VALID_DATA -> {
+                LoginViewModel.LoginResult.ERROR_INVALID_EMAIL -> {
+                    binding.tilLoginUsuario.error = R.string.errortietLoginNotExit.getResourceStringAndroid(baseContext)
+                    setEnabledBt(true)
+                }
+                LoginViewModel.LoginResult.ERROR_INVALID_PASSWORD -> {
+                    setErrorContrasea(R.string.errortietLoginNotPassword)
+                    setEnabledBt(true)
+                }
+                LoginViewModel.LoginResult.ERROR_TOO_MANY_REQUEST -> {
                     Toast.makeText(
                         baseContext,
-                        R.string.errortietLoginNotExit.getResourceStringAndroid(baseContext),
+                        R.string.errortietLoginTooManyRequest.getResourceStringAndroid(baseContext),
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    setEnabledBt(true)
+                }
+                LoginViewModel.LoginResult.FAIL -> {
+                    Toast.makeText(
+                        baseContext,
+                        R.string.errortietNotLogin.getResourceStringAndroid(baseContext),
                         Toast.LENGTH_SHORT,
                     ).show()
                     setEnabledBt(true)
@@ -125,8 +141,8 @@ class LoginActivity : AppCompatActivity() {
         validatePassword(binding.tietLoginContraseA.text.toString())
     }
 
-    private fun setErrorContrasea() {
-        binding.tilLoginContraseA.error = R.string.errortietLoginContraseA.getResourceStringAndroid(baseContext)
+    private fun setErrorContrasea(error: Int) {
+        binding.tilLoginContraseA.error = error.getResourceStringAndroid(baseContext)
         binding.tilLoginContraseA.errorIconDrawable = null
     }
 
@@ -134,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
         if (viewModel.validatePassword(password)) {
             binding.tilLoginContraseA.error = null
         } else {
-            setErrorContrasea()
+            setErrorContrasea(R.string.errortietLoginContraseA)
         }
     }
 

@@ -1,5 +1,6 @@
 package com.jroslar.listafacturasv02.data.network
 
+import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.jroslar.listafacturasv02.data.model.UserModel
 import com.jroslar.listafacturasv02.ui.viewmodel.login.ForgotPasswordViewModel
@@ -23,9 +24,20 @@ class FirebaseService constructor(
         }
     }
 
-    suspend fun login(userModel: UserModel): LoginViewModel.LoginResult = kotlin.runCatching {
-        firebaseAuth.signInWithEmailAndPassword(userModel.userEmail, userModel.userPassword).await()
-    }.toLoginResult()
+    suspend fun login(userModel: UserModel): LoginViewModel.LoginResult {
+        return try {
+            firebaseAuth.signInWithEmailAndPassword(userModel.userEmail, userModel.userPassword).await()
+            LoginViewModel.LoginResult.SUCCESS
+        } catch (e: FirebaseAuthInvalidUserException) {
+            LoginViewModel.LoginResult.ERROR_INVALID_EMAIL
+        } catch (e: FirebaseAuthInvalidCredentialsException) {
+            LoginViewModel.LoginResult.ERROR_INVALID_PASSWORD
+        } catch (e: FirebaseTooManyRequestsException) {
+            LoginViewModel.LoginResult.ERROR_TOO_MANY_REQUEST
+        } catch (e: FirebaseAuthException) {
+            LoginViewModel.LoginResult.FAIL
+        }
+    }
 
     suspend fun sendEmailResetPassword(email: String): ForgotPasswordViewModel.ForgotPasswordResult {
         return try {
@@ -34,14 +46,5 @@ class FirebaseService constructor(
         } catch (e: FirebaseAuthException) {
             ForgotPasswordViewModel.ForgotPasswordResult.NO_VALID_DATA
         }
-    }
-}
-
-private fun Result<AuthResult>.toLoginResult(): LoginViewModel.LoginResult = when (getOrNull()) {
-    null -> {
-        LoginViewModel.LoginResult.NO_VALID_DATA
-    }
-    else -> {
-        LoginViewModel.LoginResult.SUCCESS
     }
 }

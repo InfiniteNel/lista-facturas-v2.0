@@ -37,8 +37,6 @@ Wapp/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarAct
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 è
 _app/src/main/java/com/jroslar/listafacturasv02/ui/view/smartsolar/SmartSolarDetallesFragment.kt,3\b\3bc134420db597ffc9e5532d4e27c2d23338ec77
 ~
