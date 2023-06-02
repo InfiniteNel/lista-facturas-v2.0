@@ -18,7 +18,7 @@ class SignupViewModel: ViewModel() {
     val passwordValue: LiveData<String> get() = _passwordValue
     private var _repeatPasswordValue: MutableLiveData<String> = MutableLiveData()
     val repeatPasswordValue: LiveData<String> get() = _repeatPasswordValue
-    var _state: MutableLiveData<SignupResult> = MutableLiveData()
+    var _state: MutableLiveData<SignupResult?> = MutableLiveData()
 
     private object Injection: KoinComponent {
         val createAccountUseCase by inject<CreateAccountUseCase>()
@@ -31,18 +31,10 @@ class SignupViewModel: ViewModel() {
             if (validateUsuario(emailValue.value?:"")
                 && validatePassword(passwordValue.value?:"")
                 && validateRepeatPassword(repeatPasswordValue.value?:"")) {
-                createAccount()
+                _state.postValue(createAccountUseCase(UserModel(emailValue.value!!, passwordValue.value!!)))
             } else {
                 _state.postValue(SignupResult.ERROR_DATA)
             }
-        }
-    }
-
-    private suspend fun createAccount() {
-        if (createAccountUseCase(UserModel(emailValue.value!!, passwordValue.value!!))) {
-            _state.postValue(SignupResult.SUCCESS)
-        } else {
-            _state.postValue(SignupResult.FAIL)
         }
     }
 
@@ -74,6 +66,8 @@ class SignupViewModel: ViewModel() {
         LOADING,
         SUCCESS,
         FAIL,
-        ERROR_DATA
+        ERROR_DATA,
+        ERROR_INVALID_EMAIL,
+        ERROR_USER_EXISTS
     }
 }

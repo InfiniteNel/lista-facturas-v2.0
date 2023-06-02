@@ -1,20 +1,25 @@
 package com.jroslar.listafacturasv02.data.network
 
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.auth.*
+import com.jroslar.listafacturasv02.data.model.UserModel
 import com.jroslar.listafacturasv02.ui.viewmodel.login.ForgotPasswordViewModel
 import com.jroslar.listafacturasv02.ui.viewmodel.login.LoginViewModel
+import com.jroslar.listafacturasv02.ui.viewmodel.login.SignupViewModel
 import kotlinx.coroutines.tasks.await
 
 class FirebaseService constructor(
     private val firebaseAuth: FirebaseAuth
 ) {
-    suspend fun createAccount(email: String, password: String): AuthResult? {
+    suspend fun createAccount(userModel: UserModel): SignupViewModel.SignupResult {
         return try {
-            firebaseAuth.createUserWithEmailAndPassword(email, password).await()
+            firebaseAuth.createUserWithEmailAndPassword(userModel.userEmail, userModel.userPassword).await()
+            SignupViewModel.SignupResult.SUCCESS
+        } catch (e: FirebaseAuthInvalidCredentialsException) {
+            SignupViewModel.SignupResult.ERROR_INVALID_EMAIL
+        } catch(e: FirebaseAuthUserCollisionException) {
+            SignupViewModel.SignupResult.ERROR_USER_EXISTS
         } catch (e: FirebaseAuthException) {
-            null
+            SignupViewModel.SignupResult.FAIL
         }
     }
 

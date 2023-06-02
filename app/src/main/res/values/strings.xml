@@ -76,6 +76,8 @@
     <string name="errortietSignupContraseA">Contraseña debe tener 6 caracteres</string>
     <string name="errortietSignupRepetirContraseA">Contraseña no coincide</string>
     <string name="errortietSignupDuplicate">Usuario ya existe</string>
+    <string name="errortietSignupInvalidEmail">Email no valido</string>
+    <string name="errortietSignupFail">No se pudo crear la cuenta</string>
 
 
     <!-- Activity ForgotPassword -->

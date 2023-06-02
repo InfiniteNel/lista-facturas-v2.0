@@ -39,10 +39,26 @@ class SignupActivity : AppCompatActivity() {
                     validateError()
                     setEnabledBt(true)
                 }
-                SignupViewModel.SignupResult.FAIL -> {
+                SignupViewModel.SignupResult.ERROR_USER_EXISTS -> {
                     Toast.makeText(
                         baseContext,
                         R.string.errortietSignupDuplicate.getResourceStringAndroid(baseContext),
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    setEnabledBt(true)
+                }
+                SignupViewModel.SignupResult.ERROR_INVALID_EMAIL -> {
+                    Toast.makeText(
+                        baseContext,
+                        R.string.errortietSignupInvalidEmail.getResourceStringAndroid(baseContext),
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    setEnabledBt(true)
+                }
+                SignupViewModel.SignupResult.FAIL -> {
+                    Toast.makeText(
+                        baseContext,
+                        R.string.errortietSignupFail.getResourceStringAndroid(baseContext),
                         Toast.LENGTH_SHORT,
                     ).show()
                     setEnabledBt(true)
